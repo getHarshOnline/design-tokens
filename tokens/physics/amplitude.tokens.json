@@ -1,0 +1,30 @@
+{
+  "$description": "Amplitude levels as permission ceilings (page baseline, local region, interaction peak). Their meaning has one home: art-direction amplitude.",
+  "amplitude": {
+    "0": {
+      "$type": "number",
+      "$value": 0,
+      "$description": "Permission ceiling level 0; defined in art-direction amplitude."
+    },
+    "1": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "Permission ceiling level 1; defined in art-direction amplitude."
+    },
+    "2": {
+      "$type": "number",
+      "$value": 2,
+      "$description": "Permission ceiling level 2; defined in art-direction amplitude."
+    },
+    "3": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Permission ceiling level 3; defined in art-direction amplitude."
+    },
+    "4": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "Permission ceiling level 4; defined in art-direction amplitude."
+    }
+  }
+}

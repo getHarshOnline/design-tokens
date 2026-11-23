@@ -1,0 +1,26 @@
+{
+  "material": {
+    "scroll-scene": {
+      "veil-start": {
+        "$type": "number",
+        "$value": 0.25,
+        "$description": "Neutral fixture opening text protection."
+      },
+      "veil-gain": {
+        "$type": "number",
+        "$value": 0.6,
+        "$description": "Neutral fixture added text protection at full materialization."
+      }
+    }
+  },
+  "scene": {
+    "entry-blur": {
+      "$type": "dimension",
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      },
+      "$description": "Neutral fixture initial passage defocus."
+    }
+  }
+}

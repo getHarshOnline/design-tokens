@@ -1,0 +1,562 @@
+{
+  "$description": "Neutral world binding for base-theme fixtures only: achromatic colour roles and every motif axis at its shared default, so physics and mode tokens resolve without a world. No world ships it.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.9569,
+            0.9569
+          ],
+          "hex": "#f4f4f4"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9843,
+            0.9843,
+            0.9843
+          ],
+          "hex": "#fbfbfb"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1216,
+            0.1216,
+            0.1216
+          ],
+          "hex": "#1f1f1f"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3608,
+            0.3608,
+            0.3608
+          ],
+          "hex": "#5c5c5c"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8157,
+            0.8157,
+            0.8157
+          ],
+          "hex": "#d0d0d0"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5216,
+            0.5216,
+            0.5216
+          ],
+          "hex": "#858585"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2314,
+            0.2314,
+            0.2314
+          ],
+          "hex": "#3b3b3b"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5608,
+            0.5608,
+            0.5608
+          ],
+          "hex": "#8f8f8f"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.702,
+            0.149,
+            0.1176
+          ],
+          "hex": "#b3261e"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.902,
+            0.902
+          ],
+          "hex": "#e6e6e6"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1686,
+            0.1686,
+            0.1686
+          ],
+          "hex": "#2b2b2b"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9412,
+            0.9412
+          ],
+          "hex": "#f0f0f0"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1216,
+            0.1216,
+            0.1216
+          ],
+          "hex": "#1f1f1f"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": "{illumination.key.light}"
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.0863,
+            0.0863
+          ],
+          "hex": "#161616"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1255,
+            0.1255,
+            0.1255
+          ],
+          "hex": "#202020"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9255,
+            0.9255
+          ],
+          "hex": "#ececec"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.651,
+            0.651,
+            0.651
+          ],
+          "hex": "#a6a6a6"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2196,
+            0.2196,
+            0.2196
+          ],
+          "hex": "#383838"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4314,
+            0.4314,
+            0.4314
+          ],
+          "hex": "#6e6e6e"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8314,
+            0.8314,
+            0.8314
+          ],
+          "hex": "#d4d4d4"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6902,
+            0.6902,
+            0.6902
+          ],
+          "hex": "#b0b0b0"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.949,
+            0.5176,
+            0.4824
+          ],
+          "hex": "#f2847b"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1647,
+            0.1647,
+            0.1647
+          ],
+          "hex": "#2a2a2a"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.051,
+            0.051,
+            0.051
+          ],
+          "hex": "#0d0d0d"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8784,
+            0.8784,
+            0.8784
+          ],
+          "hex": "#e0e0e0"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9255,
+            0.9255
+          ],
+          "hex": "#ececec"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": "{illumination.key.dark}"
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{type.family.display}",
+          "$description": "The shared display default."
+        },
+        "width": {
+          "$type": "number",
+          "$value": 100,
+          "$description": "Neutral width axis value.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": "{type.weight.display}"
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{type.family.numeric}"
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Source case.",
+          "$extensions": {
+            "design-tokens.pattern": "none"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": "{type.size.display-2}"
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": "{illumination.key-angle}",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}"
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": "{illumination.emission.strength}"
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": "{illumination.emission.spread}"
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": "{material.emulsion.color}"
+      },
+      "raster": {
+        "$extensions": {
+          "design-tokens.pattern": "none"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": "{material.stock.raster.pitch}"
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": "{material.stock.raster.opacity}"
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{radius.surface}"
+        }
+      }
+    },
+    "geometry": {
+      "$extensions": {
+        "design-tokens.pattern": "none"
+      },
+      "plate-edge": {
+        "$extensions": {
+          "design-tokens.pattern": "none"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 0,
+            "unit": "px"
+          },
+          "$description": "No plate-edge treatment."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.h3}"
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.section}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "below"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Contained: nothing bleeds.",
+        "$extensions": {
+          "design-tokens.pattern": "contained"
+        }
+      }
+    },
+    "depth": {
+      "planes": {
+        "$type": "number",
+        "$value": 1
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 1
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.productive}"
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": "{duration.expressive}"
+      },
+      "expressive-spring": {
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.62,
+          "$description": "Equal to duration.expressive.",
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 1
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": "{motion.reduced.easing}"
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": "{motion.reduced.decay}"
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "system"
+        }
+      }
+    }
+  }
+}

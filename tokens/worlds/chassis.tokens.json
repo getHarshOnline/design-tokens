@@ -1,0 +1,634 @@
+{
+  "$description": "World 'chassis': colour roles per mode and motif coordinates.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137,
+            0.9333,
+            0.9137
+          ],
+          "hex": "#e9eee9"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9647,
+            0.9725,
+            0.9451
+          ],
+          "hex": "#f6f8f1"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1294,
+            0.2078,
+            0.1608
+          ],
+          "hex": "#213529"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3294,
+            0.4,
+            0.3569
+          ],
+          "hex": "#54665b"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7412,
+            0.8039,
+            0.7569
+          ],
+          "hex": "#bdcdc1"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4627,
+            0.5451,
+            0.4706
+          ],
+          "hex": "#768b78"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1686,
+            0.4039,
+            0.2784
+          ],
+          "hex": "#2b6747"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7255,
+            0.8275,
+            0.5765
+          ],
+          "hex": "#b9d393"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.698,
+            0.2588,
+            0.1765
+          ],
+          "hex": "#b2422d"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.851,
+            0.898,
+            0.8471
+          ],
+          "hex": "#d9e5d8"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0941,
+            0.2078,
+            0.1608
+          ],
+          "hex": "#183529"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9333,
+            0.8902
+          ],
+          "hex": "#f0eee3"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1686,
+            0.4039,
+            0.2784
+          ],
+          "hex": "#2b6747"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9333,
+            0.9647,
+            0.949
+          ],
+          "hex": "#eef6f2",
+          "alpha": 0.85
+        },
+        "$description": "Cool, even workshop light over the board."
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0588,
+            0.0941,
+            0.0745
+          ],
+          "hex": "#0f1813"
+        },
+        "$description": "Deep machined green-black; contained green gains presence."
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.1333,
+            0.1059
+          ],
+          "hex": "#16221b"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.851,
+            0.9098,
+            0.8627
+          ],
+          "hex": "#d9e8dc"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6078,
+            0.702,
+            0.6353
+          ],
+          "hex": "#9bb3a2"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1569,
+            0.2275,
+            0.1882
+          ],
+          "hex": "#283a30"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3098,
+            0.4353,
+            0.3608
+          ],
+          "hex": "#4f6f5c"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6078,
+            0.8157,
+            0.6745
+          ],
+          "hex": "#9bd0ac"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6235,
+            0.9412,
+            0.7216
+          ],
+          "hex": "#9ff0b8"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8039,
+            0.4471,
+            0.3647
+          ],
+          "hex": "#cd725d"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.102,
+            0.1804,
+            0.1373
+          ],
+          "hex": "#1a2e23"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0353,
+            0.0706,
+            0.0549
+          ],
+          "hex": "#09120e"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8314,
+            0.902,
+            0.851
+          ],
+          "hex": "#d4e6d9"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6078,
+            0.8157,
+            0.6745
+          ],
+          "hex": "#9bd0ac"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8039,
+            0.9333,
+            0.8667
+          ],
+          "hex": "#cdeedd",
+          "alpha": 0.5
+        },
+        "$description": "Cool workshop light raking the machined green-black board."
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Saira",
+            "Archivo",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Squared technical grotesk with a width axis: a specification voice.",
+          "$extensions": {
+            "design-tokens.delivery": "per target"
+          }
+        },
+        "width": {
+          "$type": "number",
+          "$value": 92,
+          "$description": "Slightly narrow and compact.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 700
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{world.type.display.family}",
+          "$description": "Figures in the display face, tabular lining, for specification pairs."
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "Capitals, as on a specification plate.",
+          "$extensions": {
+            "design-tokens.pattern": "uppercase"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 72,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": "{illumination.key-angle}",
+        "$description": "The shared upper-left key, raking the machined edges.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "Signal green, contained inside the module that holds state."
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": "{illumination.emission.strength}"
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "None past the edge: light is clipped to the module that holds state."
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0902,
+            0.1686,
+            0.1333
+          ],
+          "hex": "#172b22"
+        },
+        "$description": "Emulsion bed of product imagery."
+      },
+      "raster": {
+        "$description": "Perforation dots along panel edges; nothing across open fields.",
+        "$extensions": {
+          "design-tokens.pattern": "perforation"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": {
+            "value": 6,
+            "unit": "px"
+          }
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": "{material.stock.raster.opacity}"
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{layout.film.card-radius}"
+        }
+      }
+    },
+    "geometry": {
+      "$description": "Manufactured modules: square boundaries, stepped stacks, specification pairs.",
+      "$extensions": {
+        "design-tokens.pattern": "square-inset"
+      },
+      "plate-edge": {
+        "$description": "The chassis edge: a square machined boundary with a hairline inset inside it; no corner cut.",
+        "$extensions": {
+          "design-tokens.pattern": "inset-hairline"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 4,
+            "unit": "px"
+          },
+          "$description": "Inset distance of the hairline."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.reading}",
+        "$description": "Specification pairs, label left, value right."
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.6}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "row"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 2,
+        "$description": "Named plates: Home's human and material encounter, product imagery and product plates; specifications never bleed.",
+        "$extensions": {
+          "design-tokens.pattern": "named-plates"
+        }
+      }
+    },
+    "depth": {
+      "$description": "Interface modules use stepped planes with a clear front; authored working spaces have their own geography.",
+      "planes": {
+        "$type": "number",
+        "$value": 3
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "{space.2}"
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Slightly quicker than neutral."
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.64,
+          0,
+          0.78,
+          0
+        ],
+        "$description": "Latched: accelerates into place and locks, no overshoot."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 90,
+          "unit": "ms"
+        },
+        "$description": "Switches down to rest rather than fading."
+      },
+      "expressive-spring": {
+        "$description": "Latched: a low bounce as it locks.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.56,
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0.1
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 0.5,
+          "$description": "A short switch of state in place."
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.64,
+            0,
+            0.78,
+            1
+          ],
+          "$description": "Latched: the light switches and locks."
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": "{world.motion.decay}",
+          "$description": "Already a switch without travel: the world's own decay."
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "system"
+        }
+      }
+    }
+  }
+}

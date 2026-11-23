@@ -1,0 +1,720 @@
+{
+  "$description": "Shared physics: the four material registers, the floating-layer fill and the four light behaviours. Registers are semantic roles, not content buckets; how many share a surface follows the roles present.",
+  "material": {
+    "code": {
+      "$description": "Reading code uses the current world's sheet and legible syntax inks. Syntax colours distinguish code roles, not application status.",
+      "surface": { "$type": "color", "$value": "{color.sheet}" },
+      "ink": { "$type": "color", "$value": "{color.ink}" },
+      "comment": { "$type": "color", "$value": "{color.muted}" },
+      "punctuation": { "$type": "color", "$value": "{color.muted}" },
+      "keyword": { "$type": "color", "$value": "{color.accent}" },
+      "name": { "$type": "color", "$value": "{color.accent}" },
+      "literal": { "$type": "color", "$value": "{color.critical}" }
+    },
+    "stock": {
+      "$description": "Matte, reflects, never emits. The resting register for sustained information (prose, evidence, tables, lists, records), not exclusive to it. Each world's stock tint is its color.paper.",
+      "color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9059,
+            0.8667
+          ],
+          "hex": "#ece7dd"
+        }
+      },
+      "raster": {
+        "$description": "Horizontal registration raster, confined to margins, plates and expression regions; never under reading text. Worlds choose their own pattern via world.material.raster.",
+        "line": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1,
+            "unit": "px"
+          }
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": {
+            "value": 3,
+            "unit": "px"
+          }
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": 0.035
+        }
+      }
+    },
+    "emulsion": {
+      "$description": "Photographic/optical register: grain, halation on lit type, imperfect registration. Islands and plates. New art is never passed off as measured evidence.",
+      "color": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0706,
+            0.0627,
+            0.0431
+          ],
+          "hex": "#12100b"
+        }
+      },
+      "grain": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Grain clump size."
+      }
+    },
+    "anodised": {
+      "$description": "The anodised plane: machined and directional; command surfaces, chrome and technical apparatus. May carry short technical text; not a skin for every button.",
+      "gradient": {
+        "$type": "gradient",
+        "$value": [
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2353,
+                0.2588,
+                0.2863
+              ],
+              "hex": "#3c4249"
+            },
+            "position": 0
+          },
+          {
+            "color": {
+              "colorSpace": "srgb",
+              "components": [
+                0.2706,
+                0.298,
+                0.3255
+              ],
+              "hex": "#454c53"
+            },
+            "position": 1
+          }
+        ]
+      },
+      "brush-angle": {
+        "$type": "number",
+        "$value": 100,
+        "$description": "Brushing direction in degrees.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "brush-pitch": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "1px line every 2px."
+      },
+      "brush-opacity": {
+        "$type": "number",
+        "$value": 0.055,
+        "$description": "White line opacity."
+      },
+      "edge": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Machined edge: 1px light over 1px dark."
+      }
+    },
+    "phosphor": {
+      "$description": "Emitted state. Appears only where the system is holding a nameable state; decays when the state ends.",
+      "color": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "The phosphor register's hue: the mode-resolved signal role, the one emission hue (world.illumination.emission aliases the same role)."
+      }
+    },
+    "floating": {
+      "$description": "A floating layer over content that scrolls beneath it.",
+      "fill": {
+        "$type": "number",
+        "$value": 0.92,
+        "$description": "Opacity of the layer's own ground fill; its text passes contrast with blur off."
+      }
+    },
+    "discovery": {
+      "fill": {
+        "$type": "number",
+        "$value": 0.86,
+        "$description": "Ground fill of navigation above decorative scenery."
+      },
+      "field-opacity": {
+        "$type": "number",
+        "$value": 0.42,
+        "$description": "Visibility of the decorative discovery field behind readable controls and results."
+      },
+      "glass-fill": {
+        "$type": "number",
+        "$value": 0.66,
+        "$description": "Ground fill of the discovery form and the furthest visible result cards; text stays fully opaque."
+      },
+      "card-fill": {
+        "$type": "number",
+        "$value": 0.97,
+        "$description": "Near-solid ground fill of the centred discovery result; it yields progressively to glass-fill with distance."
+      },
+      "glass-distance": {
+        "$type": "number",
+        "$value": 3,
+        "$description": "Distance in result seats at which discovery cards reach the same ground fill as the search form."
+      }
+    },
+    "scrim": {
+      "opacity": {
+        "$type": "number",
+        "$value": 0.24,
+        "$description": "Opacity of the world shadow over background content while a navigation layer holds attention."
+      },
+      "modal-opacity": {
+        "$type": "number",
+        "$value": 0.7,
+        "$description": "Opacity of the metal veil behind a modal dialog, which keeps the page out of reach until the dialog closes."
+      }
+    },
+    "bookmark": {
+      "art-held-opacity": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "Artwork opacity while a bookmark is held by pointer or focus, revealing its lit substrate."
+      },
+      "bloom-width": {
+        "$type": "number",
+        "$value": 1.25,
+        "$description": "Horizontal extent of the bookmark illumination field."
+      },
+      "bloom-height": {
+        "$type": "number",
+        "$value": 0.88,
+        "$description": "Vertical extent of the bookmark illumination field."
+      },
+      "bloom-origin-x": {
+        "$type": "number",
+        "$value": 0.32,
+        "$description": "Horizontal origin of light beneath bookmark artwork."
+      },
+      "bloom-origin-y": {
+        "$type": "number",
+        "$value": 0.14,
+        "$description": "Vertical origin of light beneath bookmark artwork."
+      },
+      "bloom-mid-stop": {
+        "$type": "number",
+        "$value": 0.34,
+        "$description": "Position of the midtone in the bookmark illumination field."
+      },
+      "bloom-end-stop": {
+        "$type": "number",
+        "$value": 0.66,
+        "$description": "Position where the illumination returns to readable stock."
+      },
+      "bloom-mid-strength": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "World emission mixed into the bookmark bloom midtone."
+      },
+      "media-edge-opacity": {
+        "$type": "number",
+        "$value": 0.07,
+        "$description": "Hairline reflection at the artwork boundary."
+      }
+    },
+    "film": {
+      "scrim": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Shadow support behind cinematic foreground text at the lower edge."
+      },
+      "grain-opacity": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Subtle texture over the optical scene."
+      },
+      "pointer-edge": {
+        "$type": "number",
+        "$value": 0.45,
+        "$description": "Visible edge of the optical pointer ring."
+      },
+      "pointer-fill": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Translucent fill of the optical pointer ring."
+      },
+      "pointer-blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Local diffusion through the optical pointer ring."
+      },
+      "pointer-glow": {
+        "$type": "dimension",
+        "$value": {
+          "value": 10,
+          "unit": "px"
+        },
+        "$description": "Soft halo around the optical pointer point."
+      },
+      "pointer-glow-opacity": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Resting optical point halo strength."
+      },
+      "scrim-mid": {
+        "$type": "number",
+        "$value": 0.18,
+        "$description": "Lower scene shading at the transition into open imagery."
+      },
+      "scrim-mid-stop": {
+        "$type": "number",
+        "$value": 0.34,
+        "$description": "Lower viewport fraction at the middle shading stop."
+      },
+      "scrim-clear-stop": {
+        "$type": "number",
+        "$value": 0.52,
+        "$description": "Lower viewport fraction where copy shading clears."
+      },
+      "scrim-top": {
+        "$type": "number",
+        "$value": 0.35,
+        "$description": "Upper scene shading behind persistent navigation."
+      },
+      "scrim-top-clear": {
+        "$type": "number",
+        "$value": 0.18,
+        "$description": "Upper viewport fraction where navigation shading clears."
+      }
+    },
+    "field": {
+      "bloom-intensity": {
+        "$type": "number",
+        "$value": 1.5,
+        "$description": "Radiance of the optical field bloom."
+      },
+      "bloom-threshold": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Luminance threshold for the optical field bloom."
+      },
+      "bloom-smoothing": {
+        "$type": "number",
+        "$value": 0.45,
+        "$description": "Luminance interval entering the optical field bloom."
+      },
+      "bloom-radius": {
+        "$type": "number",
+        "$value": 0.82,
+        "$description": "Mixture of neighbouring bloom scales in the optical field."
+      },
+      "exposure": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Exposure before optical field tone mapping."
+      },
+      "vignette-offset": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Radial starting offset of the optical field vignette."
+      },
+      "vignette-darkness": {
+        "$type": "number",
+        "$value": 0.85,
+        "$description": "Edge attenuation of the optical field vignette."
+      },
+      "noise-opacity": {
+        "$type": "number",
+        "$value": 0.26,
+        "$description": "Soft-light grain contribution to the optical field."
+      },
+      "ground": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.011764705882352941,
+            0.023529411764705882,
+            0.0392156862745098
+          ],
+          "alpha": 1
+        },
+        "$description": "Unlit ground beneath the supplied optical field, independent of interface colour mode."
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9098039215686274,
+            0.9333333333333333,
+            0.9137254901960784
+          ],
+          "alpha": 1
+        },
+        "$description": "Foreground on the dark optical field."
+      }
+    },
+    "editorial": {
+      "veil-opacity": {
+        "$type": "number",
+        "$value": 0.13,
+        "$description": "Even optical veil over temporary editorial film."
+      },
+      "nav-opacity": {
+        "$type": "number",
+        "$value": 0.17,
+        "$description": "Top-edge protection for navigation over a film."
+      },
+      "foot-opacity": {
+        "$type": "number",
+        "$value": 0.45,
+        "$description": "Local protection beneath readable film copy."
+      },
+      "line-opacity": {
+        "$type": "number",
+        "$value": 0.32,
+        "$description": "Hairline tying the opening premise to its details."
+      },
+      "secondary-opacity": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Subordinate opening text without losing readable contrast."
+      },
+      "copy-shadow-offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Local copy shadow offset over a bright film crop."
+      },
+      "copy-shadow-blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Tight copy protection without changing film illumination."
+      },
+      "copy-shadow-opacity": {
+        "$type": "number",
+        "$value": 0.85,
+        "$description": "Copy protection strength against bright regions of the film."
+      }
+    },
+    "directory": {
+      "veil-top": {
+        "$type": "number",
+        "$value": 0.58,
+        "$description": "Closed card veil strength at its top."
+      },
+      "veil-bottom": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Closed card veil strength at its bottom."
+      },
+      "scrim-start": {
+        "$type": "number",
+        "$value": 0.34,
+        "$description": "Position where the caption legibility scrim begins."
+      },
+      "scrim-middle": {
+        "$type": "number",
+        "$value": 0.68,
+        "$description": "Position of the intermediate caption scrim stop."
+      },
+      "scrim-mid-opacity": {
+        "$type": "number",
+        "$value": 0.58,
+        "$description": "Intermediate caption scrim strength."
+      },
+      "scrim-end-opacity": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Caption scrim strength at the card foot."
+      },
+      "scrim-rest": {
+        "$type": "number",
+        "$value": 0.4,
+        "$description": "Scrim strength retained by a closed card."
+      },
+      "body-opacity": {
+        "$type": "number",
+        "$value": 0.86,
+        "$description": "Premise ink strength over directory artwork."
+      },
+      "number-rest": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Ordinal strength on closed neighbours."
+      }
+    },
+    "process": {
+      "rest-opacity": {
+        "$type": "number",
+        "$value": 0.16,
+        "$description": "Resting process line strength."
+      },
+      "trail-opacity": {
+        "$type": "number",
+        "$value": 0.25,
+        "$description": "Opacity of each overlapping soft trail mask."
+      }
+    },
+    "focus-reveal": {
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 5,
+          "unit": "px"
+        },
+        "$description": "Optical defocus of inactive words during the focus sequence."
+      },
+      "dim": {
+        "$type": "number",
+        "$value": 0.6,
+        "$description": "Inactive word opacity during the focus sequence."
+      }
+    },
+    "quote-deck": {
+      "side-opacity": {
+        "$type": "number",
+        "$value": 0.7,
+        "$description": "Opacity at the first neighbouring account."
+      },
+      "far-opacity": {
+        "$type": "number",
+        "$value": 0.385,
+        "$description": "Minimum opacity of further decorative account previews."
+      },
+      "choice-opacity": {
+        "$type": "number",
+        "$value": 0.35,
+        "$description": "Unselected account choice mark prominence."
+      }
+    },
+    "encounter-choice": {
+      "angle": {
+        "$type": "number",
+        "$value": 160,
+        "$description": "Direction of light through a supporting scene card.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "start": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Light share at the leading edge of a supporting scene card."
+      },
+      "end": {
+        "$type": "number",
+        "$value": 0.07,
+        "$description": "Light share at the receding edge of a supporting scene card."
+      },
+      "edge": {
+        "$type": "number",
+        "$value": 0.26,
+        "$description": "Resting edge light on a supporting scene card."
+      },
+      "held-edge": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "Edge light while a supporting scene card is held."
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Scene diffusion through a supporting card."
+      },
+      "saturation": {
+        "$type": "number",
+        "$value": 1.2,
+        "$description": "Colour retained through supporting scene glass."
+      },
+      "mask-centre": {
+        "$type": "number",
+        "$value": 0.6,
+        "$description": "Horizontal centre of the decorative figure feather."
+      },
+      "mask-solid": {
+        "$type": "number",
+        "$value": 0.58,
+        "$description": "Opaque inner share of the decorative figure feather."
+      },
+      "mask-clear": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Outer transparent share of the decorative figure feather."
+      }
+    },
+    "portrait": {
+      "cell-fill-share": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Coverage of the sampled portrait colour beneath each character."
+      },
+      "ink-share": {
+        "$type": "number",
+        "$value": 0.88,
+        "$description": "Maximum character ink coverage in the computational portrait."
+      },
+      "bottom-fade": {
+        "$type": "number",
+        "$value": 0.16,
+        "$description": "Lower share of the portrait that dissolves into its surrounding surface."
+      },
+      "reveal-feather": {
+        "$type": "number",
+        "$value": 0.62,
+        "$description": "Inner solid radius of a softly feathered reveal aperture."
+      },
+      "reveal-deformation": {
+        "$type": "number",
+        "$value": 0.12,
+        "$description": "Bounded radial variation of the portrait reveal boundary; a click briefly expands it by twice this share."
+      }
+    },
+    "scroll-scene": {
+      "veil-start": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Initial opacity of opening text protection."
+      },
+      "veil-gain": {
+        "$type": "number",
+        "$value": 0.12,
+        "$description": "Additional opening text protection at full materialization."
+      },
+      "ghost-opacity": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Maximum opacity of the non-reading secondary word."
+      }
+    },
+    "optical": {
+      "fill": {
+        "$type": "number",
+        "$value": 0.13,
+        "$description": "Default translucent optical plane fill."
+      },
+      "edge": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Default visible edge of an optical plane."
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Default backdrop diffusion of an optical plane."
+      },
+      "saturation": {
+        "$type": "number",
+        "$value": 1.3,
+        "$description": "Default chroma retained through an optical plane."
+      }
+    }
+  },
+  "illumination": {
+    "$description": "Key and raking light are material (they carry no meaning); emission and halation carry state.",
+    "key": {
+      "$description": "Default key light colour per mode, never beneath prose; the neutral base aliases it.",
+      "light": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            0.9647,
+            0.8941
+          ],
+          "hex": "#fff6e4",
+          "alpha": 0.9
+        },
+        "$description": "Default key in light: warm daylight."
+      },
+      "dark": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.8863,
+            0.7843
+          ],
+          "hex": "#f0e2c8",
+          "alpha": 0.6
+        },
+        "$description": "Default key in dark: a dimmer warm lamp."
+      }
+    },
+    "key-angle": {
+      "$type": "number",
+      "$value": 315,
+      "$description": "Default key direction, clockwise from the top (315 is the upper left); the neutral base aliases it.",
+      "$extensions": {
+        "design-tokens.unit": "deg"
+      }
+    },
+    "edge": {
+      "$type": "color",
+      "$value": {
+        "colorSpace": "srgb",
+        "components": [
+          1.0,
+          0.8863,
+          0.6902
+        ],
+        "hex": "#ffe2b0",
+        "alpha": 0.95
+      },
+      "$description": "Catching edge of a lit plate; raking light reveals material at margins."
+    },
+    "emission": {
+      "strength": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Default emission strength (0\u20131]; every world sets its own above 0."
+      },
+      "spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Default bloom spread of state-bearing light around its element; worlds set world.illumination.emission-spread."
+      }
+    },
+    "halation": {
+      "radius": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Bloom radius of halation around an emitter's lit core; only an emitter halates."
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "design-tokens"
+type: software
+authors:
+  - family-names: "Joshi"
+    given-names: "Harsh"
+    email: "info@rawthoughts.in"
+    website: "https://rawthoughts.in"
+    affiliation: "RawThoughts Enterprises Private Limited"
+repository-code: "https://github.com/getHarshOnline/design-tokens"
+abstract: >-
+  The single home of design token values for the Gazette themes: shared
+  physics, one token file per world and two colour modes, in the DTCG format
+  with its Resolver module.
+keywords:
+  - design-tokens
+  - dtcg
+  - theming
+  - gazette
+license: MIT
+license-url: "https://github.com/getHarshOnline/design-tokens/blob/HEAD/LICENSE"

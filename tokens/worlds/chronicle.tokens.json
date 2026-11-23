@@ -1,0 +1,628 @@
+{
+  "$description": "World 'chronicle': colour roles per mode and motif coordinates.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9569,
+            0.9333,
+            0.8863
+          ],
+          "hex": "#f4eee2"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9804,
+            0.9647,
+            0.9294
+          ],
+          "hex": "#faf6ed"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2039,
+            0.1686,
+            0.1294
+          ],
+          "hex": "#342b21"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.451,
+            0.3922,
+            0.3255
+          ],
+          "hex": "#736453"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.851,
+            0.8039,
+            0.7294
+          ],
+          "hex": "#d9cdba"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6039,
+            0.5176,
+            0.4078
+          ],
+          "hex": "#9a8468"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5922,
+            0.3098,
+            0.1059
+          ],
+          "hex": "#974f1b"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9137,
+            0.7333,
+            0.4706
+          ],
+          "hex": "#e9bb78"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6078,
+            0.1137,
+            0.1608
+          ],
+          "hex": "#9b1d29"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9176,
+            0.8667,
+            0.7804
+          ],
+          "hex": "#eaddc7"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2196,
+            0.1804,
+            0.1451
+          ],
+          "hex": "#382e25"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9333,
+            0.8902
+          ],
+          "hex": "#f0eee3"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5922,
+            0.3098,
+            0.1059
+          ],
+          "hex": "#974f1b"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            0.9137,
+            0.7804
+          ],
+          "hex": "#ffe9c7",
+          "alpha": 0.85
+        },
+        "$description": "Lamp-warm, even light over the record."
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1529,
+            0.1098,
+            0.0706
+          ],
+          "hex": "#271c12"
+        },
+        "$description": "Walnut ground under a lamp: warm and of its own, never the generic dark."
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1922,
+            0.1451,
+            0.102
+          ],
+          "hex": "#31251a"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.8941,
+            0.8118
+          ],
+          "hex": "#f0e4cf"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7608,
+            0.6863,
+            0.5765
+          ],
+          "hex": "#c2af93"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2941,
+            0.2392,
+            0.1765
+          ],
+          "hex": "#4b3d2d"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5137,
+            0.4196,
+            0.3059
+          ],
+          "hex": "#836b4e"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9216,
+            0.6392,
+            0.4157
+          ],
+          "hex": "#eba36a"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9529,
+            0.7059,
+            0.4157
+          ],
+          "hex": "#f3b46a"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8431,
+            0.4667,
+            0.4588
+          ],
+          "hex": "#d77775"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2314,
+            0.1765,
+            0.1176
+          ],
+          "hex": "#3b2d1e"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1137,
+            0.0941,
+            0.0745
+          ],
+          "hex": "#1d1813"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.8941,
+            0.8118
+          ],
+          "hex": "#f0e4cf"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9216,
+            0.6392,
+            0.4157
+          ],
+          "hex": "#eba36a"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            1.0,
+            0.7882,
+            0.4941
+          ],
+          "hex": "#ffc97e",
+          "alpha": 0.7
+        },
+        "$description": "The reading lamp over the walnut ground: warmer and closer than the day key."
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Fraunces",
+            "Georgia",
+            "serif"
+          ],
+          "$description": "Soft, human-scale display serif: authored and warm.",
+          "$extensions": {
+            "design-tokens.delivery": "per target"
+          }
+        },
+        "width": {
+          "$type": "number",
+          "$value": 100,
+          "$description": "Neutral: this face has no width axis, so the width token has no effect.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 500
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{type.family.system}",
+          "$description": "Dates and roles as technical labels in the system voice."
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Source case, the author's record.",
+          "$extensions": {
+            "design-tokens.pattern": "none"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 80,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Even key from directly above.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "Lamp ember on the entry held in focus."
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": 0.6,
+        "$description": "Singular: one entry at a time."
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 4,
+          "unit": "px"
+        },
+        "$description": "Close to the entry node."
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": "{material.emulsion.color}"
+      },
+      "raster": {
+        "$description": "No texture across the field; one hairline rule under each year, ruled like a notebook.",
+        "$extensions": {
+          "design-tokens.pattern": "baseline-rule"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": "{stroke.hair}"
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": "{ink.rule}"
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{layout.film.card-radius}"
+        }
+      }
+    },
+    "geometry": {
+      "$description": "Vertical spine with entry nodes; marginal figures aligned to their entry.",
+      "$extensions": {
+        "design-tokens.pattern": "spine"
+      },
+      "plate-edge": {
+        "$description": "The chronicle edge: a node on the plate's leading edge where it joins the spine.",
+        "$extensions": {
+          "design-tokens.pattern": "spine-node"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
+          "$description": "Node diameter."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.body}",
+        "$description": "Attributable figures in the margin beside their entry."
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.6}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "margin"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Peak-only: the authored Home encounter may bleed at the page's one peak; reading and evidence remain contained.",
+        "$extensions": {
+          "design-tokens.pattern": "peak-only"
+        }
+      }
+    },
+    "depth": {
+      "$description": "Reading and marginal evidence share one plane; authored scene geography is independent.",
+      "planes": {
+        "$type": "number",
+        "$value": 1
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 0.61,
+        "$description": "Focus travel along the spine."
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          0.84,
+          0.44,
+          1
+        ],
+        "$description": "Gentle ease-out: no latch, no overshoot."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 700,
+          "unit": "ms"
+        },
+        "$description": "Quiet fade as focus moves on."
+      },
+      "expressive-spring": {
+        "$description": "Gentle, no overshoot.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.38,
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 0.8,
+          "$description": "A quiet light change on the entry, as focus moves on."
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.2,
+            0.6,
+            0.4,
+            1
+          ],
+          "$description": "Gentle: no latch, no overshoot."
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": {
+            "value": 280,
+            "unit": "ms"
+          },
+          "$description": "A quiet fade of the lamp ember."
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "system"
+        }
+      }
+    }
+  }
+}

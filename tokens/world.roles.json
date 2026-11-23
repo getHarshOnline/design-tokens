@@ -1,0 +1,252 @@
+{
+  "$description": "Shared world-role meanings, read before each world binding. This source defines no values; world and neutral files retain the reasons for their own choices. Bounds are stated only where the retained role or design guidance supplies them. Other numeric limits remain unspecified.",
+  "world": {
+    "light": {
+      "critical": {
+        "$description": "Critical state: error, destructive and failed outcomes as text, icon and boundary on paper and sheet; always paired with a label or shape. Warning, success and complete have no colour role; text and shape carry them. A running or pending process is held state and emits color.signal."
+      },
+      "paper": {
+        "$description": "The world's page surface: its stock."
+      },
+      "sheet": {
+        "$description": "A lighter or raised stock for figure beds and cards."
+      },
+      "tint": {
+        "$description": "Quiet grouping ground on stock."
+      },
+      "ink": {
+        "$description": "Primary text and marks."
+      },
+      "muted": {
+        "$description": "Secondary text within the ink floors."
+      },
+      "line": {
+        "$description": "Hairline rules."
+      },
+      "strong-line": {
+        "$description": "Structural rules."
+      },
+      "accent": {
+        "$description": "Links, focus-adjacent emphasis and small marks; never state."
+      },
+      "signal": {
+        "$description": "Emission: light held by state. The world illumination emission aliases this role, so each mode has one emission hue."
+      },
+      "metal": {
+        "$description": "The anodised plane."
+      },
+      "on-metal": {
+        "$description": "Text on the anodised plane."
+      },
+      "focus": {
+        "$description": "The focus ring."
+      },
+      "key": {
+        "$description": "The key light's colour in this mode: daylight in light, the room's lamp in dark, each world's own."
+      }
+    },
+    "dark": {
+      "critical": {
+        "$description": "Critical state: error, destructive and failed outcomes as text, icon and boundary on paper and sheet; always paired with a label or shape. Warning, success and complete have no colour role; text and shape carry them. A running or pending process is held state and emits color.signal."
+      },
+      "paper": {
+        "$description": "The world's page surface: its stock."
+      },
+      "sheet": {
+        "$description": "A lighter or raised stock for figure beds and cards."
+      },
+      "tint": {
+        "$description": "Quiet grouping ground on stock."
+      },
+      "ink": {
+        "$description": "Primary text and marks."
+      },
+      "muted": {
+        "$description": "Secondary text within the ink floors."
+      },
+      "line": {
+        "$description": "Hairline rules."
+      },
+      "strong-line": {
+        "$description": "Structural rules."
+      },
+      "accent": {
+        "$description": "Links, focus-adjacent emphasis and small marks; never state."
+      },
+      "signal": {
+        "$description": "Emission: light held by state. The world illumination emission aliases this role, so each mode has one emission hue."
+      },
+      "metal": {
+        "$description": "The anodised plane."
+      },
+      "on-metal": {
+        "$description": "Text on the anodised plane."
+      },
+      "focus": {
+        "$description": "The focus ring."
+      },
+      "key": {
+        "$description": "The key light's colour in this mode: daylight in light, the room's lamp in dark, each world's own."
+      }
+    },
+    "type": {
+      "colophon": {
+        "size": {
+          "$description": "The terminal Home identity scale in a wide composition."
+        }
+      },
+      "display": {
+        "family": {
+          "$description": "Display face for the world; reading and system families remain shared roles."
+        },
+        "width": {
+          "$description": "Width-axis coordinate of the display face. A face without a width axis leaves this value without effect; the available range belongs to the selected face."
+        },
+        "weight": {
+          "$description": "Weight of the display voice."
+        }
+      },
+      "numeric": {
+        "family": {
+          "$description": "Face for figures and numeric labels in the world."
+        }
+      },
+      "system": {
+        "case": {
+          "$description": "System-label case (text-transform). Literal source identifiers retain their case; the pattern names the case treatment."
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$description": "Key light colour: the mode-resolved key role, so the world's key follows the page's mode."
+      },
+      "key-angle": {
+        "$description": "Direction of the key light in degrees."
+      },
+      "emission": {
+        "$description": "Emission hue: the mode-resolved signal role, so emission and held state are one hue in each mode."
+      },
+      "emission-strength": {
+        "$description": "Strength of the light held by state."
+      },
+      "emission-spread": {
+        "$description": "Spread of the light around the element that holds state."
+      }
+    },
+    "material": {
+      "optical": {
+        "fill": {
+          "$description": "Ground share of the functional optical plane."
+        },
+        "edge": {
+          "$description": "Reflected contour of the functional optical plane."
+        },
+        "highlight": {
+          "$description": "Contact reflection of the functional optical plane."
+        },
+        "blur": {
+          "$description": "Backdrop diffusion through the functional optical plane."
+        },
+        "saturation": {
+          "$description": "Chroma retained through the functional optical plane."
+        },
+        "scene-fill": {
+          "$description": "Transmitted scene share of the functional optical plane."
+        },
+        "radius": {
+          "$description": "Outer curvature of the functional optical plane."
+        }
+      },
+      "emulsion": {
+        "$description": "Emulsion bed of imagery or an expressive field."
+      },
+      "raster": {
+        "$description": "Material texture pattern. Texture belongs to its named fields and must leave running text legible.",
+        "pitch": {
+          "$description": "Spacing of the material texture pattern."
+        },
+        "opacity": {
+          "$description": "Opacity of the material texture pattern."
+        }
+      }
+    },
+    "figure": {
+      "interval": {
+        "$description": "Space between successive figures in the flow."
+      },
+      "caption": {
+        "$description": "Caption and qualification placement relative to its figure (pattern: below, above, beside, margin or row).",
+        "gap": {
+          "$description": "Distance between a figure and its caption."
+        }
+      },
+      "scale-step": {
+        "$description": "Scale step of a figure and its qualification; the two share this step."
+      }
+    },
+    "depth": {
+      "planes": {
+        "$description": "Number of optical planes the world composes (1 is a single flat plane)."
+      },
+      "offset": {
+        "$description": "Step between successive planes."
+      },
+      "blur": {
+        "$description": "Softness of the cast between planes; 0 is a hard edge."
+      },
+      "$description": "Optical depth of interface and reading planes; authored scene geography remains independent."
+    },
+    "motion": {
+      "expressive-spring": {
+        "visual-duration": {
+          "$description": "Perceived duration in seconds."
+        },
+        "bounce": {
+          "$description": "Bounce from 0 (none) to 1."
+        },
+        "$description": "Expressive spring for Motion consumers; the build also emits it as a CSS linear() easing with its duration."
+      },
+      "reduced": {
+        "$description": "The world's expressive motion without travel: its time carried by light, opacity and tone. The reduced easing stands in for the expressive easing and spring.",
+        "expressive-scale": {
+          "$description": "Relative expressive pace without travel. Multiplies motion.reduced.expressive."
+        },
+        "expressive-easing": {
+          "$description": "Expressive easing without travel, carrying the intended state through light, opacity and tone."
+        },
+        "decay": {
+          "$description": "Emission release without spatial travel."
+        }
+      },
+      "expressive-scale": {
+        "$description": "Relative expressive pace. Multiplies duration.expressive."
+      },
+      "expressive-easing": {
+        "$description": "Expressive easing curve for the world."
+      },
+      "decay": {
+        "$description": "Emission release to matte."
+      }
+    },
+    "geometry": {
+      "$description": "Shape language of boundaries, marks and structure. Shared control semantics and learned responses remain intact.",
+      "plate-edge": {
+        "$description": "The world-specific edge treatment of a plate.",
+        "size": {
+          "$description": "Size of the plate-edge treatment, interpreted by its named pattern."
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$description": "Bleed permission on the scale contained (0) · peak-only (1) · named-plates (2) · free (3); it narrows what amplitude level 4 permits, never widens it. Never crop away information the image carries."
+      }
+    },
+    "mode": {
+      "default": {
+        "$description": "Fresh-visit colour-mode policy: system follows the device; dark starts in the designed dark mode. Explicit mode choices remain available."
+      }
+    }
+  }
+}

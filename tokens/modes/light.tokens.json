@@ -1,0 +1,124 @@
+{
+  "$description": "Mode 'light': binds semantic colour roles to the active world's light palette and every world's light crossing signature, and sets the light colour-state derivations.",
+  "color": {
+    "paper": {
+      "$type": "color",
+      "$value": "{world.light.paper}"
+    },
+    "sheet": {
+      "$type": "color",
+      "$value": "{world.light.sheet}"
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "{world.light.ink}"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{world.light.muted}"
+    },
+    "line": {
+      "$type": "color",
+      "$value": "{world.light.line}"
+    },
+    "strong-line": {
+      "$type": "color",
+      "$value": "{world.light.strong-line}"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{world.light.accent}"
+    },
+    "signal": {
+      "$type": "color",
+      "$value": "{world.light.signal}"
+    },
+    "critical": {
+      "$type": "color",
+      "$value": "{world.light.critical}"
+    },
+    "tint": {
+      "$type": "color",
+      "$value": "{world.light.tint}"
+    },
+    "metal": {
+      "$type": "color",
+      "$value": "{world.light.metal}"
+    },
+    "on-metal": {
+      "$type": "color",
+      "$value": "{world.light.on-metal}"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{world.light.focus}"
+    },
+    "key": {
+      "$type": "color",
+      "$value": "{world.light.key}",
+      "$description": "Key light colour: the active world's key in this mode."
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "{world.light.ink}",
+      "$description": "Cast-shadow colour: the mode's deepest role, so a shadow takes its ground's tint."
+    },
+    "lift": {
+      "$description": "Strengths of a lifted surface's depth in this mode, applied to every elevation step.",
+      "shadow": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Multiplier of each elevation step's opacity of color.shadow. Full cast: in light the shadow carries the lift."
+      },
+      "edge": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Opacity of color.key along a lifted surface's key-facing edge. No lit edge: in light the cast carries the lift."
+      }
+    },
+    "state": {
+      "$description": "Fraction of color.ink a base role mixes in OKLab for each state.",
+      "hover": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Hover step."
+      },
+      "pressed": {
+        "$type": "number",
+        "$value": 0.12,
+        "$description": "Pressed step, beyond hover."
+      },
+      "selected": {
+        "$type": "number",
+        "$value": 0.09,
+        "$description": "Selected ground step, between hover and pressed."
+      }
+    },
+    "crossing": {
+      "carrier": {
+        "$type": "color",
+        "$value": "{crossing.carrier.light}"
+      },
+      "chassis": {
+        "$type": "color",
+        "$value": "{crossing.chassis.light}"
+      },
+      "chronicle": {
+        "$type": "color",
+        "$value": "{crossing.chronicle.light}"
+      },
+      "folio": {
+        "$type": "color",
+        "$value": "{crossing.folio.light}"
+      },
+      "lattice": {
+        "$type": "color",
+        "$value": "{crossing.lattice.light}"
+      },
+      "nocturne": {
+        "$type": "color",
+        "$value": "{crossing.nocturne.light}"
+      }
+    }
+  }
+}

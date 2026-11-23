@@ -1,0 +1,632 @@
+{
+  "$description": "World 'folio': colour roles per mode and motif coordinates.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9294,
+            0.9412,
+            0.9098
+          ],
+          "hex": "#edf0e8"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9686,
+            0.9725,
+            0.9373
+          ],
+          "hex": "#f7f8ef"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1529,
+            0.2314,
+            0.2078
+          ],
+          "hex": "#273b35"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3569,
+            0.4196,
+            0.3843
+          ],
+          "hex": "#5b6b62"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7882,
+            0.8196,
+            0.7765
+          ],
+          "hex": "#c9d1c6"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4824,
+            0.5529,
+            0.5059
+          ],
+          "hex": "#7b8d81"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1725,
+            0.4039,
+            0.3804
+          ],
+          "hex": "#2c6761"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7529,
+            0.8275,
+            0.6196
+          ],
+          "hex": "#c0d39e"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6863,
+            0.2745,
+            0.2275
+          ],
+          "hex": "#af463a"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8667,
+            0.898,
+            0.8431
+          ],
+          "hex": "#dde5d7"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1059,
+            0.1882,
+            0.1804
+          ],
+          "hex": "#1b302e"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9333,
+            0.8902
+          ],
+          "hex": "#f0eee3"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1725,
+            0.4039,
+            0.3804
+          ],
+          "hex": "#2c6761"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9608,
+            0.9686,
+            0.9529
+          ],
+          "hex": "#f5f7f3",
+          "alpha": 0.8
+        },
+        "$description": "Even mineral daylight, without warmth."
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1137,
+            0.1255,
+            0.1176
+          ],
+          "hex": "#1d201e"
+        },
+        "$description": "Neutral mineral dark ground; parallel registers keep their order."
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1451,
+            0.1608,
+            0.149
+          ],
+          "hex": "#252926"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8902,
+            0.902,
+            0.8667
+          ],
+          "hex": "#e3e6dd"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6706,
+            0.702,
+            0.6549
+          ],
+          "hex": "#abb3a7"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2314,
+            0.2627,
+            0.2392
+          ],
+          "hex": "#3b433d"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4078,
+            0.4549,
+            0.4196
+          ],
+          "hex": "#68746b"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5765,
+            0.8118,
+            0.8157
+          ],
+          "hex": "#93cfd0"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8039,
+            0.8784,
+            0.7137
+          ],
+          "hex": "#cde0b6"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8157,
+            0.4941,
+            0.4392
+          ],
+          "hex": "#d07e70"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1647,
+            0.2078,
+            0.1882
+          ],
+          "hex": "#2a3530"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0784,
+            0.102,
+            0.0941
+          ],
+          "hex": "#141a18"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8902,
+            0.902,
+            0.8667
+          ],
+          "hex": "#e3e6dd"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5765,
+            0.8118,
+            0.8157
+          ],
+          "hex": "#93cfd0"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8863,
+            0.898,
+            0.8706
+          ],
+          "hex": "#e2e5de",
+          "alpha": 0.5
+        },
+        "$description": "Even mineral light, grey and without warmth, over the dark page."
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Source Serif 4",
+            "Georgia",
+            "serif"
+          ],
+          "$description": "Institutional scholarly serif with an optical-size axis.",
+          "$extensions": {
+            "design-tokens.delivery": "per target"
+          }
+        },
+        "width": {
+          "$type": "number",
+          "$value": 100,
+          "$description": "Neutral: this face has no width axis, so the width token has no effect.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 500
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{world.type.display.family}",
+          "$description": "Figures in the display face, tabular lining, for equal-weight rows."
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Source case for institutional codes.",
+          "$extensions": {
+            "design-tokens.pattern": "none"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 88,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Even key from directly above.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "Cool sage, narrow and tight to the selected paper, section or cell."
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Narrow, tight and fully perceptible; authority from composure, never low strength."
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Tight to the selected paper, section or cell."
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0941,
+            0.1765,
+            0.1647
+          ],
+          "hex": "#182d2a"
+        },
+        "$description": "Emulsion bed of the chart field."
+      },
+      "raster": {
+        "$description": "None on stock: flat institutional paper; texture only inside the chart field.",
+        "$extensions": {
+          "design-tokens.pattern": "none"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": "{material.stock.raster.pitch}"
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": 0
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{layout.film.card-radius}"
+        }
+      }
+    },
+    "geometry": {
+      "$description": "Parallel rules and numbered structure; equal-weight tabular rows.",
+      "$extensions": {
+        "design-tokens.pattern": "numbered-parallel"
+      },
+      "plate-edge": {
+        "$description": "The folio edge: a paper-number notch in the plate's top outer edge that carries the paper and figure number.",
+        "$extensions": {
+          "design-tokens.pattern": "folio-notch"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          },
+          "$description": "Notch depth."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.reading}",
+        "$description": "Equal-weight tabular rows; no hero numerals."
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.8}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "below"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Peak-only: the authored Home encounter may bleed at the page's one peak; reading and evidence remain contained.",
+        "$extensions": {
+          "design-tokens.pattern": "peak-only"
+        }
+      }
+    },
+    "depth": {
+      "$description": "Reading and interface share one plane; chart plates stay bounded and scene geography is independent.",
+      "planes": {
+        "$type": "number",
+        "$value": 1
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Neutral pace."
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0,
+          0,
+          1,
+          1
+        ],
+        "$description": "Linear: a measured interval, no easing flourish."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 400,
+          "unit": "ms"
+        },
+        "$description": "Plain and measured, linear back to rest."
+      },
+      "expressive-spring": {
+        "$description": "No bounce; tween consumers use the linear expressive-easing.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.62,
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 1,
+          "$description": "A measured interval of light, the same as travel's."
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": "{world.motion.expressive-easing}",
+          "$description": "Linear, as the world's own curve."
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": {
+            "value": 160,
+            "unit": "ms"
+          },
+          "$description": "A plain, measured step back to matte."
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "system"
+        }
+      }
+    }
+  }
+}

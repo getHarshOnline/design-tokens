@@ -1,0 +1,634 @@
+{
+  "$description": "World 'nocturne' (dark-first): colour roles per mode and motif coordinates.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9373,
+            0.9216,
+            0.9451
+          ],
+          "hex": "#efebf1"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9765,
+            0.9647,
+            0.9804
+          ],
+          "hex": "#f9f6fa"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1961,
+            0.1725,
+            0.2392
+          ],
+          "hex": "#322c3d"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4118,
+            0.3804,
+            0.451
+          ],
+          "hex": "#696173"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8235,
+            0.7804,
+            0.851
+          ],
+          "hex": "#d2c7d9"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.5608,
+            0.5059,
+            0.6
+          ],
+          "hex": "#8f8199"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4431,
+            0.3255,
+            0.5255
+          ],
+          "hex": "#715386"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.851,
+            0.7333,
+            0.8471
+          ],
+          "hex": "#d9bbd8"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6784,
+            0.2588,
+            0.3255
+          ],
+          "hex": "#ad4253"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8824,
+            0.8431,
+            0.9059
+          ],
+          "hex": "#e1d7e7"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0902,
+            0.1098,
+            0.1608
+          ],
+          "hex": "#171c29"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9333,
+            0.8902
+          ],
+          "hex": "#f0eee3"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4431,
+            0.3255,
+            0.5255
+          ],
+          "hex": "#715386"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.902,
+            0.8784,
+            0.949
+          ],
+          "hex": "#e6e0f2",
+          "alpha": 0.7
+        },
+        "$description": "Distant night light: pale cool plum, diffused."
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1098,
+            0.102,
+            0.1451
+          ],
+          "hex": "#1c1a25"
+        },
+        "$description": "The primary mode: deep plum-grained night."
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.149,
+            0.1373,
+            0.1843
+          ],
+          "hex": "#26232f"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9059,
+            0.8784,
+            0.8863
+          ],
+          "hex": "#e7e0e2"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7176,
+            0.6902,
+            0.7412
+          ],
+          "hex": "#b7b0bd"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2902,
+            0.2588,
+            0.3294
+          ],
+          "hex": "#4a4254"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4667,
+            0.4078,
+            0.502
+          ],
+          "hex": "#776880"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7647,
+            0.6431,
+            0.8431
+          ],
+          "hex": "#c3a4d7"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.851,
+            0.7333,
+            0.8471
+          ],
+          "hex": "#d9bbd8"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7961,
+            0.4706,
+            0.5098
+          ],
+          "hex": "#cb7882"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.2039,
+            0.1686,
+            0.2627
+          ],
+          "hex": "#342b43"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0706,
+            0.0784,
+            0.1137
+          ],
+          "hex": "#12141d"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9255,
+            0.9098,
+            0.9373
+          ],
+          "hex": "#ece8ef"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8431,
+            0.7098,
+            0.9255
+          ],
+          "hex": "#d7b5ec"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7882,
+            0.7412,
+            0.8902
+          ],
+          "hex": "#c9bde3",
+          "alpha": 0.45
+        },
+        "$description": "Distant night light, pale plum and diffused, low over the horizon."
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "Anybody",
+            "Archivo",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Wide display with a broad width axis: a distant, slow narrative voice.",
+          "$extensions": {
+            "design-tokens.delivery": "per target"
+          }
+        },
+        "width": {
+          "$type": "number",
+          "$value": 125,
+          "$description": "Wide: the widest display of the worlds.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 400
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{type.family.system}",
+          "$description": "Numbering and entry figures in the system voice."
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Source case, quiet beside the narrative.",
+          "$extensions": {
+            "design-tokens.pattern": "none"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 96,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": 280,
+        "$description": "Low and far from the left, like light over a horizon.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "Plum bloom at a distant boundary."
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": "{illumination.emission.strength}"
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "The widest spread of the worlds."
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1294,
+            0.1137,
+            0.1882
+          ],
+          "hex": "#211d30"
+        },
+        "$description": "Emulsion bed of scene plates and the horizon field."
+      },
+      "raster": {
+        "$description": "Photographic grain without structure; clumped, never a grid or lines; kept off the reading line.",
+        "$extensions": {
+          "design-tokens.pattern": "grain"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": "{material.emulsion.grain}"
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": 0.06
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{layout.film.card-radius}"
+        }
+      }
+    },
+    "geometry": {
+      "$description": "Horizon, negative space and sequence: long low boundaries, ellipses and a crescent.",
+      "$extensions": {
+        "design-tokens.pattern": "horizon"
+      },
+      "plate-edge": {
+        "$description": "The nocturne edge: no corner marks; the plate's lower edge runs on as a long low horizon rule.",
+        "$extensions": {
+          "design-tokens.pattern": "horizon-rule"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 32,
+            "unit": "px"
+          },
+          "$description": "How far the horizon rule runs past the plate."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.reading}",
+        "$description": "Figures at reading scale, adjacent to prose."
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.9}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "below"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 3,
+        "$description": "Free: any plate may bleed.",
+        "$extensions": {
+          "design-tokens.pattern": "free"
+        }
+      }
+    },
+    "depth": {
+      "$description": "The atmospheric interface field has layered distance; authored scene geography is independent and text stays stable.",
+      "planes": {
+        "$type": "number",
+        "$value": 4
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": "{space.5}"
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 1.6,
+        "$description": "Slow expressive pace."
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.34,
+          1.18,
+          0.64,
+          1
+        ],
+        "$description": "Slow with a slight overshoot before rest."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 1400,
+          "unit": "ms"
+        },
+        "$description": "Slow and soft."
+      },
+      "expressive-spring": {
+        "$description": "Slow with a visible overshoot.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.99,
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0.3
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 2,
+          "$description": "A slow change of distant light; the horizon brightens in place."
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.4,
+            0,
+            0.6,
+            1
+          ],
+          "$description": "Slow and soft; the overshoot becomes a long settle."
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": {
+            "value": 560,
+            "unit": "ms"
+          },
+          "$description": "A slow, soft release of the bloom."
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "dark"
+        }
+      }
+    }
+  }
+}

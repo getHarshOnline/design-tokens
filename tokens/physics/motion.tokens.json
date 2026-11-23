@@ -1,0 +1,1232 @@
+{
+  "$description": "Shared physics: productive motion is global and unmodulated; expressive motion takes each world's scale, easing and decay; every role and every world's expressive motion has a designed reduced form.",
+  "duration": {
+    "feedback": {
+      "$type": "duration",
+      "$value": {
+        "value": 110,
+        "unit": "ms"
+      },
+      "$description": "Acknowledgement and feedback: hover, press and small state changes answering input."
+    },
+    "preview": {
+      "$type": "duration",
+      "$value": {
+        "value": 170,
+        "unit": "ms"
+      },
+      "$description": "Crossing/reference preview in."
+    },
+    "enter": {
+      "$type": "duration",
+      "$value": {
+        "value": 250,
+        "unit": "ms"
+      },
+      "$description": "Shell entrance."
+    },
+    "leave": {
+      "$type": "duration",
+      "$value": {
+        "value": 150,
+        "unit": "ms"
+      },
+      "$description": "Dismissal; always shorter than entrance."
+    },
+    "result": {
+      "$type": "duration",
+      "$value": {
+        "value": 140,
+        "unit": "ms"
+      },
+      "$description": "Selection-indicator move; result content replaces instantly."
+    },
+    "sequence": {
+      "$type": "duration",
+      "$value": {
+        "value": 290,
+        "unit": "ms"
+      },
+      "$description": "Chapter expansion and emphasis."
+    },
+    "hold": {
+      "$type": "duration",
+      "$value": {
+        "value": 1500,
+        "unit": "ms"
+      },
+      "$description": "Destructive hold: how long a press is held before an irreversible removal completes."
+    },
+    "expressive": {
+      "$type": "duration",
+      "$value": {
+        "value": 620,
+        "unit": "ms"
+      },
+      "$description": "Base expressive duration (material events, islands). Multiplied by world.motion.expressive-scale; never gates a destination."
+    },
+    "preview-select": {
+      "$type": "duration",
+      "$value": {
+        "value": 450,
+        "unit": "ms"
+      },
+      "$description": "Coordinated selection, premise opening and image crossfade in a directory preview."
+    },
+    "preview-art": {
+      "$type": "duration",
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$description": "Image settling inside the fixed directory preview frame."
+    },
+    "bookmark": {
+      "$type": "duration",
+      "$value": {
+        "value": 620,
+        "unit": "ms"
+      },
+      "$description": "Coordinated bookmark lift, colour bloom and shaped shadow change."
+    }
+  },
+  "delay": {
+    "preview": {
+      "$type": "duration",
+      "$value": {
+        "value": 180,
+        "unit": "ms"
+      },
+      "$description": "Hover intent before a reference preview opens; focus opens it immediately."
+    },
+    "preview-warm": {
+      "$type": "duration",
+      "$value": {
+        "value": 400,
+        "unit": "ms"
+      },
+      "$description": "After a preview closes, a neighbouring trigger within this time opens at once."
+    },
+    "stagger": {
+      "$type": "duration",
+      "$value": {
+        "value": 40,
+        "unit": "ms"
+      },
+      "$description": "Productive step between successive elements of a cascade whose order is information; used as read by productive roles, and multiplied by world.motion.expressive-scale for an expressive stagger. Never applied to a list the reader scans."
+    },
+    "quote-autoplay": {
+      "$type": "duration",
+      "$value": {
+        "value": 5000,
+        "unit": "ms"
+      },
+      "$description": "Time between automatic testimony advances while unattended; the consumer disables autoplay for reduced motion."
+    },
+    "quote-wheel-lock": {
+      "$type": "duration",
+      "$value": {
+        "value": 450,
+        "unit": "ms"
+      },
+      "$description": "Minimum interval between wheel-requested testimony advances."
+    },
+    "process-step": {
+      "$type": "duration",
+      "$value": {
+        "value": 8000,
+        "unit": "ms"
+      },
+      "$description": "Reading interval before an explicitly enabled process accordion advances to the next stage."
+    }
+  },
+  "easing": {
+    "productive": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0.7,
+        0.2,
+        1
+      ],
+      "$description": "The one damped family for every productive role."
+    },
+    "move": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.77,
+        0,
+        0.175,
+        1
+      ],
+      "$description": "Symmetric ease-in-out for movement between two on-screen positions."
+    },
+    "preview-open": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.22,
+        1,
+        0.36,
+        1
+      ],
+      "$description": "A directory premise opens and its selected image settles without overshoot."
+    },
+    "preview-fade": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.25,
+        0.1,
+        0.25,
+        1
+      ],
+      "$description": "Surface and image opacity exchange in a directory preview."
+    },
+    "bookmark": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.22,
+        1,
+        0.36,
+        1
+      ],
+      "$description": "Bookmark colour and shadow response; fallback curve for its sampled lift."
+    }
+  },
+  "scale": {
+    "$description": "Transform scales of productive motion; near 1, never 0.",
+    "press": {
+      "$type": "number",
+      "$value": 0.97,
+      "$description": "The control's drawing on press, about its own centre."
+    },
+    "enter": {
+      "$type": "number",
+      "$value": 0.96,
+      "$description": "The scale a surface enters from and leaves toward, with opacity."
+    },
+    "bookmark-art": {
+      "$type": "number",
+      "$value": 1.28,
+      "$description": "Artwork approach through the held bookmark colour bloom."
+    },
+    "preview-art": {
+      "$type": "number",
+      "$value": 1.04,
+      "$description": "Resting overscan of an unselected directory image."
+    }
+  },
+  "blur": {
+    "productive": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Blur a productive crossfade passes through while two states cross."
+    }
+  },
+  "motion": {
+    "spring": {
+      "$description": "Springs for Motion consumers, in Motion's visual-duration and bounce parameters; the build also emits each as a CSS linear() easing with its duration.",
+      "productive": {
+        "$description": "The one productive spring: damped, no bounce; the spring form of easing.productive.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.25,
+          "$description": "Perceived duration in seconds.",
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Bounce from 0 (none) to 1."
+        }
+      }
+    },
+    "reduced": {
+      "$description": "The reduced form of each role: no spatial travel, and the state still lands through opacity, light and tone. Springs and eased travel give way to motion.reduced.easing over the role's reduced duration.",
+      "feedback": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Instant state change: press and hover change form, emphasis or light at once."
+      },
+      "preview": {
+        "$type": "duration",
+        "$value": {
+          "value": 80,
+          "unit": "ms"
+        },
+        "$description": "Brief opacity step in place; no travel or scale."
+      },
+      "enter": {
+        "$type": "duration",
+        "$value": {
+          "value": 100,
+          "unit": "ms"
+        },
+        "$description": "Shell entrance as a brief opacity step; the veil and shell appear in place."
+      },
+      "leave": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Dismissal is instant; focus returns at once."
+      },
+      "result": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Reduced equivalent of the selection-indicator move: the indicator changes state instantly."
+      },
+      "sequence": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Chapter expansion opens at its final geometry."
+      },
+      "expressive": {
+        "$type": "duration",
+        "$value": {
+          "value": 200,
+          "unit": "ms"
+        },
+        "$description": "Base of an expressive moment without travel: light changes or material clears in place. Multiplied by world.motion.reduced.expressive-scale."
+      },
+      "stagger": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "No cascade: the elements appear together in their final order."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 120,
+          "unit": "ms"
+        },
+        "$description": "Emission release as a brief opacity step; light appears and releases without travel or bloom animation."
+      },
+      "hold": {
+        "$type": "duration",
+        "$value": "{duration.hold}",
+        "$description": "The same hold; progress shows without travel."
+      },
+      "press-scale": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "No press transform; emphasis or a tone step carries the press."
+      },
+      "enter-scale": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Surfaces appear at full size; opacity carries the entrance."
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "No blur; states crossfade by opacity alone."
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.productive}",
+        "$description": "The one curve of every reduced step, standing in for easing.productive, easing.move and the productive spring."
+      },
+      "preview-select": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "The selected directory premise and image appear immediately."
+      },
+      "preview-art": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "The directory image rests without settling travel."
+      },
+      "preview-art-scale": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "The selected directory image holds its complete resting crop."
+      },
+      "preview-lift": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "The selected directory premise is immediately in its resting position."
+      },
+      "bookmark": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Bookmark state changes immediately through colour without travel."
+      },
+      "bookmark-lift": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        },
+        "$description": "Held bookmark remains seated while its material changes."
+      },
+      "focus-reveal": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Complete heading without focus travel or optical obscuring."
+      },
+      "encounter-choice": {
+        "$type": "duration",
+        "$value": {
+          "value": 0,
+          "unit": "ms"
+        },
+        "$description": "Supporting choice holds its shape; border and action tone answer immediately without travel."
+      },
+      "search-pond-pace": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Search pond retains a still field when motion is reduced."
+      },
+      "process-accordion-media-scale": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Process illustration changes without scale travel in reduced motion."
+      }
+    },
+    "preview-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": -4,
+        "unit": "px"
+      },
+      "$description": "Premise entry displacement inside a directory choice."
+    },
+    "bookmark": {
+      "bounce": {
+        "$type": "number",
+        "$value": 0.45,
+        "$description": "Damping of the bookmark lift response."
+      },
+      "samples": {
+        "$type": "number",
+        "$value": 40,
+        "$description": "Intervals in the sampled bookmark lift response."
+      },
+      "lift": {
+        "$type": "dimension",
+        "$value": {
+          "value": 6,
+          "unit": "px"
+        },
+        "$description": "Upward travel of the held bookmark."
+      }
+    },
+    "process": {
+      "accordion-media-scale": {
+        "$type": "number",
+        "$value": 0.86,
+        "$description": "Scale of the process illustration while its content changes."
+      }
+    },
+    "focus-reveal": {
+      "travel": {
+        "$type": "duration",
+        "$value": {
+          "value": 500,
+          "unit": "ms"
+        },
+        "$description": "Word focus frame travel and optical transition."
+      },
+      "dwell": {
+        "$type": "duration",
+        "$value": {
+          "value": 1000,
+          "unit": "ms"
+        },
+        "$description": "Clear word hold between focus transitions."
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.22,
+          1,
+          0.36,
+          1
+        ],
+        "$description": "Measured focus frame and word resolve together."
+      },
+      "once-budget": {
+        "$type": "duration",
+        "$value": {
+          "value": 4500,
+          "unit": "ms"
+        },
+        "$description": "Maximum complete once-only heading pass, including final immediate clear; headings that need longer retain their complete static form."
+      }
+    },
+    "quote-deck": {
+      "select": {
+        "$type": "duration",
+        "$value": {
+          "value": 550,
+          "unit": "ms"
+        },
+        "$description": "Coordinated fan selection travel."
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": "{easing.move}",
+        "$description": "Fan selection uses the shared movement response with a gentle start and finish."
+      },
+      "fade": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.25,
+          0.1,
+          0.25,
+          1
+        ],
+        "$description": "Account previews fade while their distance changes."
+      },
+      "choice": {
+        "$type": "duration",
+        "$value": {
+          "value": 300,
+          "unit": "ms"
+        },
+        "$description": "Account choice mark expansion and emphasis."
+      }
+    },
+    "encounter-choice": {
+      "lift": {
+        "$type": "dimension",
+        "$value": {
+          "value": -6,
+          "unit": "px"
+        },
+        "$description": "Supporting choice rise under pointer inquiry."
+      },
+      "peek-travel": {
+        "$type": "dimension",
+        "$value": {
+          "value": -16,
+          "unit": "px"
+        },
+        "$description": "Decorative figure approach into its supporting card."
+      },
+      "peek-turn": {
+        "$type": "number",
+        "$value": -4,
+        "$description": "Decorative figure turn during approach.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "lift-duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 600,
+          "unit": "ms"
+        },
+        "$description": "Supporting choice rise and return."
+      },
+      "peek-duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 800,
+          "unit": "ms"
+        },
+        "$description": "Slower figure settling within the lifted choice."
+      },
+      "material-duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 300,
+          "unit": "ms"
+        },
+        "$description": "Supporting choice border and action material response."
+      },
+      "action-duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 400,
+          "unit": "ms"
+        },
+        "$description": "Supporting action expansion and return."
+      },
+      "action-scale": {
+        "$type": "number",
+        "$value": 1.06,
+        "$description": "Supporting action expansion under pointer inquiry."
+      },
+      "easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.16,
+          1,
+          0.3,
+          1
+        ],
+        "$description": "Quick approach followed by a long settling glide in a supporting choice."
+      }
+    },
+    "search-pond-pace": {
+      "$type": "number",
+      "$value": 1,
+      "$description": "Reference movement pace for the search discovery pond."
+    },
+    "portrait": {
+      "glyph-cycle": {
+        "$type": "duration",
+        "$value": {
+          "value": 900,
+          "unit": "ms"
+        },
+        "$description": "Interval of subtle character evolution while the computational portrait follows attention."
+      },
+      "reveal-life": {
+        "$type": "duration",
+        "$value": {
+          "value": 1800,
+          "unit": "ms"
+        },
+        "$description": "Time for a pointer ripple to dissolve back into the portrait surface."
+      },
+      "reveal-cycle": {
+        "$type": "duration",
+        "$value": {
+          "value": 5400,
+          "unit": "ms"
+        },
+        "$description": "Period of gentle boundary evolution while the portrait reveal is active."
+      }
+    },
+    "typing-reveal": {
+      "duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 1500,
+          "unit": "ms"
+        },
+        "$description": "Time for a complete short typed premise; reduced motion exposes the complete text without a typing pass."
+      }
+    },
+    "primary-action": {
+      "duration": {
+        "$type": "duration",
+        "$value": {
+          "value": 300,
+          "unit": "ms"
+        },
+        "$description": "Response time for opt-in primary-action movement, independent of scene playback."
+      },
+      "lift": {
+        "$type": "dimension",
+        "$value": {
+          "value": -2,
+          "unit": "px"
+        },
+        "$description": "Upward response of an opt-in primary action to a fine pointer."
+      }
+    }
+  },
+  "gaze": {
+    "tracking-rate": {
+      "$type": "number",
+      "$value": 6.5,
+      "$description": "Rate at which a continuous character gaze answers pointer input."
+    },
+    "idle-rate": {
+      "$type": "number",
+      "$value": 3.5,
+      "$description": "Rate at which an unattended character settles into its ambient gaze."
+    },
+    "script-rate": {
+      "$type": "number",
+      "$value": 14,
+      "$description": "Rate at which the explicitly requested look-around reaches its authored poses."
+    },
+    "parallax-rate": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "Rate at which a character field follows its gaze without moving the content."
+    },
+    "idle-after": {
+      "$type": "duration",
+      "$value": {
+        "value": 4200,
+        "unit": "ms"
+      },
+      "$description": "Milliseconds of quiet before the ambient gaze begins."
+    },
+    "idle-ramp": {
+      "$type": "duration",
+      "$value": {
+        "value": 2600,
+        "unit": "ms"
+      },
+      "$description": "Milliseconds blending the previous gaze into ambient movement."
+    },
+    "idle-major-amplitude": {
+      "$type": "number",
+      "$value": 0.34,
+      "$description": "Primary amplitude of the unattended gaze within its normalised range."
+    },
+    "idle-minor-amplitude": {
+      "$type": "number",
+      "$value": 0.07,
+      "$description": "Secondary amplitude keeping unattended gaze from a regular pendulum."
+    },
+    "idle-major-frequency": {
+      "$type": "number",
+      "$value": 0.55,
+      "$description": "Primary angular frequency of the unattended gaze per second."
+    },
+    "idle-minor-frequency": {
+      "$type": "number",
+      "$value": 1.63,
+      "$description": "Secondary angular frequency of the unattended gaze per second."
+    },
+    "idle-phase": {
+      "$type": "number",
+      "$value": -0.4,
+      "$description": "Starting phase of the unattended gaze."
+    },
+    "pointer-margin": {
+      "$type": "number",
+      "$value": 0.05,
+      "$description": "Viewport fraction beyond which gaze remains at its outer pose."
+    },
+    "head-clamp": {
+      "$type": "number",
+      "$value": 0.2,
+      "$description": "Viewport fraction keeping nose-centred pointer mapping well-conditioned."
+    },
+    "step-limit": {
+      "$type": "duration",
+      "$value": {
+        "value": 50.0,
+        "unit": "ms"
+      },
+      "$description": "Maximum elapsed time applied after an interrupted animation frame."
+    },
+    "parallax-x": {
+      "$type": "number",
+      "$value": 10,
+      "$description": "Maximum horizontal pixel displacement of the character field."
+    },
+    "parallax-y": {
+      "$type": "number",
+      "$value": 6,
+      "$description": "Maximum vertical pixel displacement of the character field."
+    },
+    "overscan": {
+      "$type": "number",
+      "$value": 1.03,
+      "$description": "Field overscan that covers its subtle gaze displacement."
+    },
+    "look-travel-first": {
+      "$type": "duration",
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$description": "Milliseconds reaching the first pose in an explicit look-around."
+    },
+    "look-hold-first": {
+      "$type": "duration",
+      "$value": {
+        "value": 1650,
+        "unit": "ms"
+      },
+      "$description": "Elapsed milliseconds at the end of the first look-around hold."
+    },
+    "look-travel-second": {
+      "$type": "duration",
+      "$value": {
+        "value": 2900,
+        "unit": "ms"
+      },
+      "$description": "Elapsed milliseconds reaching the second look-around pose."
+    },
+    "look-hold-second": {
+      "$type": "duration",
+      "$value": {
+        "value": 3650,
+        "unit": "ms"
+      },
+      "$description": "Elapsed milliseconds at the end of the second look-around hold."
+    },
+    "look-return": {
+      "$type": "duration",
+      "$value": {
+        "value": 4500,
+        "unit": "ms"
+      },
+      "$description": "Elapsed milliseconds returning to rest in an explicit look-around."
+    }
+  },
+  "film": {
+    "minimum-rate": {
+      "$type": "number",
+      "$value": 1.25,
+      "$description": "Minimum film seconds advanced per elapsed second while following scroll."
+    },
+    "catchup-rate": {
+      "$type": "number",
+      "$value": 3.2,
+      "$description": "Rate at which film position converges on the scroll-selected time."
+    },
+    "step-limit": {
+      "$type": "duration",
+      "$value": {
+        "value": 50.0,
+        "unit": "ms"
+      },
+      "$description": "Maximum elapsed time applied after a suspended film frame."
+    },
+    "line-gain": {
+      "$type": "number",
+      "$value": 1.25,
+      "$description": "Extent of each line entrance relative to its scene visibility."
+    },
+    "line-stagger": {
+      "$type": "number",
+      "$value": 0.12,
+      "$description": "Visibility offset between successive lines of a film statement."
+    },
+    "line-blur": {
+      "$type": "dimension",
+      "$value": {
+        "value": 14,
+        "unit": "px"
+      },
+      "$description": "Defocus at the start of a film statement entrance."
+    },
+    "line-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 18,
+        "unit": "px"
+      },
+      "$description": "Vertical travel into the resting film statement."
+    },
+    "persistence": {
+      "$type": "number",
+      "$value": 0.28,
+      "$description": "Previous-frame contribution while advancing through neighbouring film frames."
+    },
+    "pointer-rate": {
+      "$type": "number",
+      "$value": 14,
+      "$description": "Convergence rate of the optical pointer ornament."
+    },
+    "pointer-hover-scale": {
+      "$type": "number",
+      "$value": 1.9,
+      "$description": "Optical pointer ring enlargement over an actionable surface."
+    },
+    "grain-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 600,
+        "unit": "ms"
+      },
+      "$description": "Cadence of the optical scene texture."
+    },
+    "grain-steps": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Discrete grain positions per texture cycle."
+    },
+    "grain-shift-major": {
+      "$type": "number",
+      "$value": 0.03,
+      "$description": "Larger texture displacement as a fraction of its field."
+    },
+    "grain-shift-minor": {
+      "$type": "number",
+      "$value": 0.02,
+      "$description": "Smaller texture displacement as a fraction of its field."
+    },
+    "pointer-fade": {
+      "$type": "duration",
+      "$value": {
+        "value": 300,
+        "unit": "ms"
+      },
+      "$description": "Visibility change of the optical pointer ring."
+    },
+    "pointer-dot-fade": {
+      "$type": "duration",
+      "$value": {
+        "value": 200,
+        "unit": "ms"
+      },
+      "$description": "Central point yield as the optical pointer identifies a link."
+    },
+    "scrub-damping": {
+      "$type": "number",
+      "$value": 7.670002290593093,
+      "$description": "Exponential convergence rate for a directly scrubbed film."
+    },
+    "navigation-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 1600,
+        "unit": "ms"
+      },
+      "$description": "Duration of an explicitly requested journey to a film rest."
+    },
+    "navigation-exponent": {
+      "$type": "number",
+      "$value": 10,
+      "$description": "Exponential deceleration of an explicitly requested film journey."
+    },
+    "navigation-offset": {
+      "$type": "number",
+      "$value": 1.001,
+      "$description": "Endpoint offset of the film journey response before clamping."
+    },
+    "navigation-samples": {
+      "$type": "number",
+      "$value": 100,
+      "$description": "Intervals in the generated film journey easing projection."
+    }
+  },
+  "field": {
+    "pointer-rate": {
+      "$type": "number",
+      "$value": 4.5,
+      "$description": "Convergence rate of the optical field pointer."
+    },
+    "camera-rate": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Convergence rate of the optical field camera."
+    },
+    "energy-decay": {
+      "$type": "number",
+      "$value": 3.5,
+      "$description": "Decay rate of scroll energy in the optical field."
+    },
+    "stream-rate": {
+      "$type": "number",
+      "$value": 4,
+      "$description": "Convergence rate of optical streamline visibility."
+    },
+    "step-limit": {
+      "$type": "duration",
+      "$value": {
+        "value": 33.333333333333336,
+        "unit": "ms"
+      },
+      "$description": "Maximum elapsed time applied to optical field convergence after suspension."
+    },
+    "camera-x": {
+      "$type": "number",
+      "$value": 0.5,
+      "$description": "Horizontal camera travel per normalized optical field pointer unit."
+    },
+    "camera-y": {
+      "$type": "number",
+      "$value": 0.34,
+      "$description": "Vertical camera travel per normalized optical field pointer unit."
+    },
+    "stream-x": {
+      "$type": "number",
+      "$value": 0.55,
+      "$description": "Horizontal streamline parallax per normalized optical field pointer unit."
+    },
+    "stream-y": {
+      "$type": "number",
+      "$value": 0.35,
+      "$description": "Vertical streamline parallax per normalized optical field pointer unit."
+    },
+    "energy-divisor": {
+      "$type": "number",
+      "$value": 45,
+      "$description": "Scroll velocity normalization for optical field energy."
+    },
+    "intro-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 2000,
+        "unit": "ms"
+      },
+      "$description": "Time for the optical field to assemble from its expanded pose."
+    },
+    "line-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 1050,
+        "unit": "ms"
+      },
+      "$description": "Duration of an optical field statement entering."
+    },
+    "line-stagger": {
+      "$type": "duration",
+      "$value": {
+        "value": 75,
+        "unit": "ms"
+      },
+      "$description": "Interval between optical field statement lines."
+    },
+    "note-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$description": "Duration of an optical field annotation entering."
+    },
+    "note-stagger": {
+      "$type": "duration",
+      "$value": {
+        "value": 80,
+        "unit": "ms"
+      },
+      "$description": "Interval between optical field annotations."
+    },
+    "note-delay": {
+      "$type": "duration",
+      "$value": {
+        "value": 220,
+        "unit": "ms"
+      },
+      "$description": "Delay before optical field annotations enter."
+    },
+    "panel-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 22,
+        "unit": "px"
+      },
+      "$description": "Entrance displacement of the optical field panel."
+    },
+    "note-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$description": "Entrance displacement of the optical field note."
+    },
+    "close-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 10,
+        "unit": "px"
+      },
+      "$description": "Entrance displacement of the optical field close."
+    },
+    "line-offset": {
+      "$type": "number",
+      "$value": 108,
+      "$description": "Percent translation fully concealing a field headline before its entrance."
+    }
+  },
+  "editorial": {
+    "nav-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 600,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the nav in a single editorial opening."
+    },
+    "title-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 850,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the title in a single editorial opening."
+    },
+    "title-delay": {
+      "$type": "duration",
+      "$value": {
+        "value": 150,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the title in a single editorial opening."
+    },
+    "rule-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 900,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the rule in a single editorial opening."
+    },
+    "rule-delay": {
+      "$type": "duration",
+      "$value": {
+        "value": 400,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the rule in a single editorial opening."
+    },
+    "detail-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 800,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the detail in a single editorial opening."
+    },
+    "detail-delay": {
+      "$type": "duration",
+      "$value": {
+        "value": 500,
+        "unit": "ms"
+      },
+      "$description": "Entrance timing for the detail in a single editorial opening."
+    },
+    "title-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 30,
+        "unit": "px"
+      },
+      "$description": "Entry displacement for the title in an editorial opening."
+    },
+    "detail-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$description": "Entry displacement for the detail in an editorial opening."
+    },
+    "nav-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": -12,
+        "unit": "px"
+      },
+      "$description": "Entry displacement for the nav in an editorial opening."
+    },
+    "rule-scale": {
+      "$type": "number",
+      "$value": 0.6,
+      "$description": "Starting span of the editorial premise divider."
+    },
+    "easing": {
+      "$type": "cubicBezier",
+      "$value": [
+        0,
+        0,
+        0.58,
+        1
+      ],
+      "$description": "Editorial entry settles smoothly without overshoot."
+    }
+  },
+  "scene": {
+    "intro-duration": {
+      "$type": "duration",
+      "$value": {
+        "value": 2600,
+        "unit": "ms"
+      },
+      "$description": "Duration of the initial authored film gesture."
+    },
+    "intro-share": {
+      "$type": "number",
+      "$value": 0.12,
+      "$description": "Share of the film introduced before scrolling."
+    },
+    "intro-exponent": {
+      "$type": "number",
+      "$value": 3,
+      "$description": "Deceleration exponent of the initial scene gesture."
+    },
+    "title-lift": {
+      "$type": "number",
+      "$value": 0.06,
+      "$description": "Viewport-height travel as the opening releases."
+    },
+    "entry-blur": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      },
+      "$description": "Initial defocus of an observed passage."
+    },
+    "entry-easing": {
+      "$type": "cubicBezier",
+      "$value": [
+        0.2,
+        0.7,
+        0.1,
+        1
+      ],
+      "$description": "Settling curve of the scroll composition."
+    },
+    "caption-lift": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Side-caption entrance travel."
+    },
+    "caption-blur": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      },
+      "$description": "Side-caption entrance defocus."
+    },
+    "letter-blur": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      },
+      "$description": "Arrival letter entrance defocus."
+    },
+    "ghost-travel": {
+      "$type": "number",
+      "$value": 0.14,
+      "$description": "Viewport-height range of the secondary word drift."
+    },
+    "cue-cycle": {
+      "$type": "duration",
+      "$value": {
+        "value": 2400,
+        "unit": "ms"
+      },
+      "$description": "Period of the quiet drawing scroll cue."
+    }
+  }
+}

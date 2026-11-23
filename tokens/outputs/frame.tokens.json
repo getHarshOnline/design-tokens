@@ -1,0 +1,30 @@
+{
+  "frame": {
+    "safe": {
+      "action": { "$type": "number", "$value": 0.9, "$description": "Fraction of the frame reserved for essential visual action." },
+      "title": { "$type": "number", "$value": 0.8, "$description": "Fraction of the frame reserved for key words and captions." }
+    },
+    "canvas": {
+      "landscape": {
+        "width": { "$type": "number", "$value": 1920 },
+        "height": { "$type": "number", "$value": 1080 },
+        "fps": { "$type": "number", "$value": 30 }
+      },
+      "portrait": {
+        "width": { "$type": "number", "$value": 1080 },
+        "height": { "$type": "number", "$value": 1920 },
+        "fps": { "$type": "number", "$value": 30 }
+      }
+    },
+    "type": {
+      "title": { "$type": "dimension", "$value": { "value": 96, "unit": "px" }, "$description": "Primary title at the reference film resolution." },
+      "body": { "$type": "dimension", "$value": { "value": 36, "unit": "px" }, "$description": "Explanatory copy at the reference film resolution." },
+      "caption": { "$type": "dimension", "$value": { "value": 28, "unit": "px" }, "$description": "Subordinate caption at the reference film resolution." },
+      "leading": { "$type": "number", "$value": "{type.line-height.heading}" }
+    },
+    "duration": {
+      "transition": { "$type": "duration", "$value": { "value": 600, "unit": "ms" }, "$description": "Default film transition; a shot's actual edit remains composition data." },
+      "reading-hold": { "$type": "duration", "$value": { "value": 2000, "unit": "ms" }, "$description": "Initial hold for a short statement, extended to fit the actual words." }
+    }
+  }
+}

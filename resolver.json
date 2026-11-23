@@ -1,0 +1,130 @@
+{
+  "$schema": "https://www.designtokens.org/schemas/2025.10/resolver.json",
+  "version": "2025.10",
+  "name": "design-tokens",
+  "description": "Shared physics, one world, one mode.",
+  "sets": {
+    "physics": {
+      "description": "Primitives shared by every world.",
+      "sources": [
+        {
+          "$ref": "tokens/physics/layout.tokens.json"
+        },
+        {
+          "$ref": "tokens/physics/type.tokens.json"
+        },
+        {
+          "$ref": "tokens/physics/motion.tokens.json"
+        },
+        {
+          "$ref": "tokens/physics/material.tokens.json"
+        },
+        {
+          "$ref": "tokens/physics/amplitude.tokens.json"
+        },
+        {
+          "$ref": "tokens/physics/crossing.tokens.json"
+        }
+      ]
+    },
+    "world-roles": {
+      "description": "Shared role meanings; selected worlds supply their values and reasons.",
+      "sources": [
+        {
+          "$ref": "tokens/world.roles.json"
+        }
+      ]
+    }
+  },
+  "modifiers": {
+    "world": {
+      "description": "Which world to build.",
+      "contexts": {
+        "carrier": [
+          {
+            "$ref": "tokens/worlds/carrier.tokens.json"
+          }
+        ],
+        "chassis": [
+          {
+            "$ref": "tokens/worlds/chassis.tokens.json"
+          }
+        ],
+        "chronicle": [
+          {
+            "$ref": "tokens/worlds/chronicle.tokens.json"
+          }
+        ],
+        "folio": [
+          {
+            "$ref": "tokens/worlds/folio.tokens.json"
+          }
+        ],
+        "lattice": [
+          {
+            "$ref": "tokens/worlds/lattice.tokens.json"
+          }
+        ],
+        "nocturne": [
+          {
+            "$ref": "tokens/worlds/nocturne.tokens.json"
+          }
+        ],
+        "neutral": [
+          {
+            "$ref": "tokens/base/neutral.tokens.json"
+          },
+          {
+            "$ref": "tokens/base/scene.tokens.json"
+          }
+        ]
+      },
+      "default": "carrier"
+    },
+    "mode": {
+      "description": "Light or dark.",
+      "contexts": {
+        "light": [
+          {
+            "$ref": "tokens/modes/light.tokens.json"
+          }
+        ],
+        "dark": [
+          {
+            "$ref": "tokens/modes/dark.tokens.json"
+          }
+        ]
+      },
+      "default": "light"
+    },
+    "output": {
+      "description": "Explicit output target; website roles remain the default.",
+      "contexts": {
+        "web": [],
+        "frame": [
+          {
+            "$ref": "tokens/outputs/frame.tokens.json"
+          }
+        ]
+      },
+      "default": "web"
+    }
+  },
+  "resolutionOrder": [
+    {
+      "$ref": "#/sets/physics"
+    },
+    {
+      "$ref": "#/sets/world-roles"
+    },
+    {
+      "$ref": "#/modifiers/world"
+    },
+    {
+      "$ref": "#/modifiers/mode"
+    },
+    {
+      "$ref": "#/modifiers/output"
+    }
+  ]
+}

@@ -1,0 +1,470 @@
+{
+  "$description": "Shared physics: type roles, scale, line-height, tracking, optical-size ratio and ink floors. Delivery (self-hosted files, subset or fallback path) is decided per target.",
+  "type": {
+    "family": {
+      "display": {
+        "$type": "fontFamily",
+        "$value": [
+          "Archivo",
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "$description": "Default only; every world overrides world.type.display.family with a face of its own character.",
+        "$extensions": {
+          "design-tokens.delivery": "per target"
+        }
+      },
+      "reading": {
+        "$type": "fontFamily",
+        "$value": [
+          "Instrument Sans",
+          "Instrument Sans Fallback",
+          "Arial",
+          "Helvetica",
+          "sans-serif"
+        ],
+        "$description": "Reading voice for sustained prose; proportional, never mono. The web fallback matches measured upright advances and the delivered face's 970/250 ascent/descent per 1000 units. It only applies while the designed face loads or is unavailable.",
+        "$extensions": {
+          "design-tokens.delivery": "per target",
+          "design-tokens.web-fallback": {
+            "family": "Instrument Sans Fallback",
+            "ascent": 97,
+            "descent": 25,
+            "faces": [
+              { "local": ["Arial", "Liberation Sans"], "weight": "400", "sizeAdjust": 102.63 },
+              { "local": ["Arial Bold", "Liberation Sans Bold"], "weight": "500 700", "sizeAdjust": 98.46 }
+            ]
+          }
+        }
+      },
+      "system": {
+        "$type": "fontFamily",
+        "$value": [
+          "Martian Mono",
+          "SFMono-Regular",
+          "Consolas",
+          "Liberation Mono",
+          "monospace"
+        ],
+        "$description": "System voice, machine-oriented: commands, navigation and control labels where they are addresses or commands, metadata, timestamps, identifiers, paths, keys, command results and machine state. Never reading prose; never display by default.",
+        "$extensions": {
+          "design-tokens.delivery": "per target"
+        }
+      },
+      "code": {
+        "$type": "fontFamily",
+        "$value": "{type.family.system}",
+        "$description": "Code and literal input: the system face, in its own role so a target can deliver a distinct code face without touching the system voice."
+      },
+      "numeric": {
+        "$type": "fontFamily",
+        "$value": "{type.family.display}",
+        "$description": "Default numeric voice: tabular figures with units attached. Worlds choose theirs through world.type.numeric.family; type.numeric.width applies only where that face has a width axis."
+      }
+    },
+    "weight": {
+      "display": {
+        "$type": "fontWeight",
+        "$value": 600,
+        "$description": "Base display weight; worlds override through world.type.display.weight."
+      },
+      "reading": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "system": {
+        "$type": "fontWeight",
+        "$value": 400
+      },
+      "numeric": {
+        "$type": "fontWeight",
+        "$value": 700
+      }
+    },
+    "code": {
+      "block-size": {
+        "$type": "dimension",
+        "$value": { "value": 14, "unit": "px" },
+        "$description": "Code blocks use a compact mono size while retaining the system face's full reading weight."
+      },
+      "inline-scale": {
+        "$type": "number",
+        "$value": 0.85,
+        "$description": "Inline code follows its surrounding text's x-height: Instrument Sans 510 units to Martian Mono 600 units, with the shared minimum size retained."
+      }
+    },
+    "numeric": {
+      "width": {
+        "$type": "number",
+        "$value": 112,
+        "$description": "Width-axis value (wdth) for tabular figures in a face with a width axis; no effect otherwise.",
+        "$extensions": {
+          "design-tokens.unit": "wdth"
+        }
+      }
+    },
+    "size": {
+      "display-1": {
+        "$type": "dimension",
+        "$value": {
+          "value": 56,
+          "unit": "px"
+        },
+        "$description": "Home display."
+      },
+      "display-2": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$description": "Page display."
+      },
+      "h2": {
+        "$type": "dimension",
+        "$value": {
+          "value": 30,
+          "unit": "px"
+        },
+        "$description": "Section heading."
+      },
+      "h3": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "reading": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Sustained prose."
+      },
+      "body": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        },
+        "$description": "Operational text: forms, lists, controls, captions."
+      },
+      "meta": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$description": "System metadata (range 12\u201313)."
+      },
+      "micro": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Floor. No text below 12px; small never means faint."
+      },
+      "display-fluid": {
+        "$description": "Fluid display step: a rem min and a max at least double it.",
+        "min": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1.75,
+            "unit": "rem"
+          }
+        },
+        "max": {
+          "$type": "dimension",
+          "$value": "{type.size.display-1}"
+        }
+      }
+    },
+    "line-height": {
+      "display": {
+        "$type": "number",
+        "$value": 1.08
+      },
+      "heading": {
+        "$type": "number",
+        "$value": 1.2
+      },
+      "reading": {
+        "$type": "number",
+        "$value": 1.6
+      },
+      "body": {
+        "$type": "number",
+        "$value": 1.55
+      },
+      "system": {
+        "$type": "number",
+        "$value": 1.6
+      },
+      "quote": {
+        "$type": "number",
+        "$value": 1.22,
+        "$description": "Compact quotation leading within an attributed fan card."
+      }
+    },
+    "tracking": {
+      "$description": "Letter-spacing in em (numbers: DTCG dimensions allow only px/rem; CSS output appends the unit).",
+      "display": {
+        "$type": "number",
+        "$value": -0.03,
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "heading": {
+        "$type": "number",
+        "$value": -0.025,
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "system": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Uppercase and system labels; ledger range .06\u2013.12em.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      }
+    },
+    "optical-size": {
+      "ratio": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Authored optical-size multiplier for renderers that map text size to a supported opsz axis; browser auto sizing is independent."
+      }
+    },
+    "film": {
+      "card-title": {
+        "$type": "dimension",
+        "$value": {
+          "value": 19,
+          "unit": "px"
+        },
+        "$description": "Subordinate title of an optical scene invitation."
+      },
+      "card-body": {
+        "$type": "dimension",
+        "$value": "{type.size.meta}",
+        "$description": "Short supporting copy within an optical scene invitation."
+      },
+      "premise": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Brief reading ground beside a cinematic statement."
+      },
+      "line-height": {
+        "$type": "number",
+        "$value": 1.5,
+        "$description": "Leading for compact cinematic premises and invitations."
+      }
+    },
+    "field": {
+      "headline-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$description": "Smallest complete field statement."
+      },
+      "headline-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 115.2,
+          "unit": "px"
+        },
+        "$description": "Largest complete field statement."
+      },
+      "headline-fluid": {
+        "$type": "number",
+        "$value": 0.07,
+        "$description": "Viewport fraction setting the field statement."
+      },
+      "headline-leading": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Tight leading of a large optical field statement."
+      },
+      "headline-tracking": {
+        "$type": "number",
+        "$value": -0.045,
+        "$description": "Em tracking of the optical field statement.",
+        "$extensions": {
+          "design-tokens.unit": "em-ratio"
+        }
+      },
+      "headline-weight": {
+        "$type": "number",
+        "$value": 600,
+        "$description": "Optical field display weight."
+      },
+      "note": {
+        "$type": "dimension",
+        "$value": "{type.size.body}",
+        "$description": "Readable annotation accompanying a field statement."
+      },
+      "closer-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Quiet closing question in the handheld field."
+      },
+      "closer-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "Quiet closing question in the wide field."
+      },
+      "closer-fluid": {
+        "$type": "number",
+        "$value": 0.016,
+        "$description": "Viewport fraction setting the field closing question."
+      }
+    },
+    "editorial": {
+      "headline": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Restrained two-line ambient opening headline."
+      },
+      "headline-mobile": {
+        "$type": "dimension",
+        "$value": {
+          "value": 26,
+          "unit": "px"
+        },
+        "$description": "Handheld editorial opening title and subordinate premise."
+      },
+      "headline-leading": {
+        "$type": "number",
+        "$value": 1.15,
+        "$description": "Two-line editorial premise leading."
+      },
+      "secondary-weight": {
+        "$type": "number",
+        "$value": 400,
+        "$description": "Subordinate premise weight against its primary title."
+      },
+      "detail": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Compact readable supporting prose over an ambient opening."
+      },
+      "caption": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Editorial programme caption and compact navigation."
+      },
+      "caption-tracking": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.08,
+          "unit": "rem"
+        },
+        "$description": "Programme caption tracking."
+      }
+    },
+    "process": {
+      "title-stacked": {
+        "$type": "dimension",
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "Measured process stage heading in the stacked composition; keeps the ordinal with the title on narrow reading surfaces."
+      }
+    },
+    "scene": {
+      "headline-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 60,
+          "unit": "px"
+        },
+        "$description": "Minimum opening scene heading size."
+      },
+      "headline-fluid": {
+        "$type": "number",
+        "$value": 0.095,
+        "$description": "Opening heading size as a viewport-width fraction."
+      },
+      "headline-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 176,
+          "unit": "px"
+        },
+        "$description": "Maximum opening scene heading size."
+      },
+      "headline-leading": {
+        "$type": "number",
+        "$value": 0.95,
+        "$description": "Leading of the large central opening heading."
+      },
+      "headline-tracking": {
+        "$type": "number",
+        "$value": 0.04,
+        "$description": "Letter spacing of the opening heading in em units.",
+        "$extensions": {
+          "design-tokens.unit": "em-ratio"
+        }
+      }
+    }
+  },
+  "ink": {
+    "$description": "Ink opacity ladder over the world's ink colour. Floors, not styles.",
+    "primary": {
+      "$type": "number",
+      "$value": 1
+    },
+    "secondary": {
+      "$type": "number",
+      "$value": 0.86
+    },
+    "system": {
+      "$type": "number",
+      "$value": 0.74,
+      "$description": "Floor for system/metadata text. Never lower for anything that must be read."
+    },
+    "recessive": {
+      "$type": "number",
+      "$value": 0.55,
+      "$description": "Reading apparatus at rest on quiet pages; returns to the system floor on hover, focus or proximity. Not for content that must be read at rest."
+    },
+    "rule": {
+      "$type": "number",
+      "$value": 0.24,
+      "$description": "Rules."
+    },
+    "hair": {
+      "$type": "number",
+      "$value": 0.16,
+      "$description": "Hairline boundaries."
+    }
+  }
+}

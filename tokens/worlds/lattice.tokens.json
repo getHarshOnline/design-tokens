@@ -1,0 +1,641 @@
+{
+  "$description": "World 'lattice': colour roles per mode and motif coordinates.",
+  "world": {
+    "light": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9294,
+            0.9412,
+            0.9333
+          ],
+          "hex": "#edf0ee"
+        }
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9686,
+            0.9765,
+            0.9647
+          ],
+          "hex": "#f7f9f6"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1098,
+            0.1686,
+            0.1765
+          ],
+          "hex": "#1c2b2d"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3255,
+            0.3882,
+            0.4118
+          ],
+          "hex": "#536369"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7725,
+            0.8078,
+            0.8157
+          ],
+          "hex": "#c5ced0"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.4706,
+            0.549,
+            0.5725
+          ],
+          "hex": "#788c92"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1882,
+            0.3608,
+            0.5216
+          ],
+          "hex": "#305c85"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6941,
+            0.8471,
+            0.8667
+          ],
+          "hex": "#b1d8dd"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7098,
+            0.2549,
+            0.2784
+          ],
+          "hex": "#b54147"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8627,
+            0.9098,
+            0.9216
+          ],
+          "hex": "#dce8eb"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0824,
+            0.1686,
+            0.1961
+          ],
+          "hex": "#152b32"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9412,
+            0.9333,
+            0.8902
+          ],
+          "hex": "#f0eee3"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1882,
+            0.3608,
+            0.5216
+          ],
+          "hex": "#305c85"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.9333,
+            0.9608,
+            0.9804
+          ],
+          "hex": "#eef5fa",
+          "alpha": 0.8
+        },
+        "$description": "Cool and even pale blue-white light."
+      }
+    },
+    "dark": {
+      "paper": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0784,
+            0.1059,
+            0.1255
+          ],
+          "hex": "#141b20"
+        },
+        "$description": "Cool slate-blue ground; ice emission gains presence."
+      },
+      "sheet": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1059,
+            0.1412,
+            0.1647
+          ],
+          "hex": "#1b242a"
+        }
+      },
+      "ink": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8627,
+            0.902,
+            0.9176
+          ],
+          "hex": "#dce6ea"
+        }
+      },
+      "muted": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6196,
+            0.6902,
+            0.7216
+          ],
+          "hex": "#9eb0b8"
+        }
+      },
+      "line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1765,
+            0.2275,
+            0.2588
+          ],
+          "hex": "#2d3a42"
+        }
+      },
+      "strong-line": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.3451,
+            0.4392,
+            0.4824
+          ],
+          "hex": "#58707b"
+        }
+      },
+      "accent": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.6431,
+            0.7882,
+            0.9059
+          ],
+          "hex": "#a4c9e7"
+        }
+      },
+      "signal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7686,
+            0.902,
+            0.9412
+          ],
+          "hex": "#c4e6f0"
+        }
+      },
+      "critical": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7922,
+            0.4667,
+            0.4706
+          ],
+          "hex": "#ca7778"
+        }
+      },
+      "tint": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.1137,
+            0.1922,
+            0.251
+          ],
+          "hex": "#1d3140"
+        }
+      },
+      "metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.051,
+            0.0784,
+            0.0941
+          ],
+          "hex": "#0d1418"
+        }
+      },
+      "on-metal": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.8627,
+            0.902,
+            0.9176
+          ],
+          "hex": "#dce6ea"
+        }
+      },
+      "focus": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.702,
+            0.8314,
+            0.9373
+          ],
+          "hex": "#b3d4ef"
+        }
+      },
+      "key": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.7922,
+            0.8745,
+            0.949
+          ],
+          "hex": "#cadff2",
+          "alpha": 0.5
+        },
+        "$description": "Cold slate-blue light, even over the lattice."
+      }
+    },
+    "type": {
+      "display": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": [
+            "IBM Plex Sans",
+            "Archivo",
+            "Arial",
+            "sans-serif"
+          ],
+          "$description": "Upright analytical grotesk with a width axis; set narrow.",
+          "$extensions": {
+            "design-tokens.delivery": "per target"
+          }
+        },
+        "width": {
+          "$type": "number",
+          "$value": 85,
+          "$description": "Narrow: a condensed display width for this world.",
+          "$extensions": {
+            "design-tokens.unit": "wdth"
+          }
+        },
+        "weight": {
+          "$type": "fontWeight",
+          "$value": 500
+        }
+      },
+      "numeric": {
+        "family": {
+          "$type": "fontFamily",
+          "$value": "{world.type.display.family}",
+          "$description": "Figures in the display face, tabular lining."
+        }
+      },
+      "system": {
+        "case": {
+          "$type": "number",
+          "$value": 0,
+          "$description": "Source case; notation is case-significant.",
+          "$extensions": {
+            "design-tokens.pattern": "none"
+          }
+        }
+      },
+      "colophon": {
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 64,
+            "unit": "px"
+          }
+        }
+      }
+    },
+    "illumination": {
+      "key": {
+        "$type": "color",
+        "$value": "{color.key}"
+      },
+      "key-angle": {
+        "$type": "number",
+        "$value": 0,
+        "$description": "Even key from directly above, orthogonal to the page.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "emission": {
+        "$type": "color",
+        "$value": "{color.signal}",
+        "$description": "Cold ice-white, converging on the held node."
+      },
+      "emission-strength": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Precise rather than bright."
+      },
+      "emission-spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Narrow: light converges on the held node."
+      }
+    },
+    "material": {
+      "emulsion": {
+        "$type": "color",
+        "$value": {
+          "colorSpace": "srgb",
+          "components": [
+            0.0863,
+            0.1569,
+            0.1765
+          ],
+          "hex": "#16282d"
+        },
+        "$description": "Emulsion bed of a relation-field island."
+      },
+      "raster": {
+        "$description": "Orthogonal lattice, not lines; in visual fields, never an all-page texture under prose.",
+        "$extensions": {
+          "design-tokens.pattern": "orthogonal-lattice"
+        },
+        "pitch": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": "{material.stock.raster.opacity}"
+        }
+      },
+      "optical": {
+        "fill": {
+          "$type": "number",
+          "$value": "{material.floating.fill}"
+        },
+        "edge": {
+          "$type": "number",
+          "$value": "{material.optical.edge}"
+        },
+        "highlight": {
+          "$type": "number",
+          "$value": "{elevation.film.highlight}"
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": "{material.optical.blur}"
+        },
+        "saturation": {
+          "$type": "number",
+          "$value": "{material.optical.saturation}"
+        },
+        "scene-fill": {
+          "$type": "number",
+          "$value": "{material.optical.fill}"
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": "{layout.film.card-radius}"
+        }
+      }
+    },
+    "geometry": {
+      "$description": "Square-cut notation containers, orthogonal relations and tree rails on the baseline.",
+      "$extensions": {
+        "design-tokens.pattern": "orthogonal-bracket"
+      },
+      "plate-edge": {
+        "$description": "The lattice edge: each plate corner cut as an orthogonal bracket, the plate held like a formal term.",
+        "$extensions": {
+          "design-tokens.pattern": "bracket-cut"
+        },
+        "size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 8,
+            "unit": "px"
+          },
+          "$description": "Bracket arm length."
+        }
+      }
+    },
+    "figure": {
+      "scale-step": {
+        "$type": "dimension",
+        "$value": "{type.size.body}",
+        "$description": "Small numerals at tabular alignment."
+      },
+      "interval": {
+        "$type": "dimension",
+        "$value": "{space.7}"
+      },
+      "caption": {
+        "$extensions": {
+          "design-tokens.pattern": "above"
+        },
+        "gap": {
+          "$type": "dimension",
+          "$value": "{space.label}"
+        }
+      }
+    },
+    "crop": {
+      "bleed": {
+        "$type": "number",
+        "$value": 1,
+        "$description": "Peak-only: the authored Home encounter may bleed at the page's one peak; reading and evidence remain contained.",
+        "$extensions": {
+          "design-tokens.pattern": "peak-only"
+        }
+      }
+    },
+    "depth": {
+      "$description": "Notation and interface share one plane; authored scene geography is independent.",
+      "planes": {
+        "$type": "number",
+        "$value": 1
+      },
+      "offset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0,
+          "unit": "px"
+        }
+      }
+    },
+    "motion": {
+      "expressive-scale": {
+        "$type": "number",
+        "$value": 0.8,
+        "$description": "Slightly quicker than neutral."
+      },
+      "expressive-easing": {
+        "$type": "cubicBezier",
+        "$value": [
+          0.3,
+          0.9,
+          0.1,
+          1
+        ],
+        "$description": "Hard-damped: resolves precisely and converges without a loose tail."
+      },
+      "decay": {
+        "$type": "duration",
+        "$value": {
+          "value": 240,
+          "unit": "ms"
+        },
+        "$description": "Brisk and exact."
+      },
+      "expressive-spring": {
+        "$description": "Hard-damped: no bounce.",
+        "visual-duration": {
+          "$type": "number",
+          "$value": 0.5,
+          "$extensions": {
+            "design-tokens.unit": "s"
+          }
+        },
+        "bounce": {
+          "$type": "number",
+          "$value": 0
+        }
+      },
+      "reduced": {
+        "expressive-scale": {
+          "$type": "number",
+          "$value": 0.7,
+          "$description": "A brisk, exact light change at the held node."
+        },
+        "expressive-easing": {
+          "$type": "cubicBezier",
+          "$value": [
+            0.3,
+            0.85,
+            0.1,
+            1
+          ],
+          "$description": "Hard-damped: converges without a tail."
+        },
+        "decay": {
+          "$type": "duration",
+          "$value": {
+            "value": 100,
+            "unit": "ms"
+          },
+          "$description": "A brisk, exact release."
+        }
+      }
+    },
+    "mode": {
+      "default": {
+        "$extensions": {
+          "design-tokens.pattern": "system"
+        }
+      }
+    }
+  }
+}

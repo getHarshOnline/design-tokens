@@ -1,0 +1,1940 @@
+{
+  "$description": "Shared physics: space, field, measure, reference widths and thresholds, targets, focus, strokes, radius, elevation, island bounds. Identical in every world; plate-edge geometry belongs to each world (world.geometry.plate-edge).",
+  "space": {
+    "$description": "4px rhythm. Values express relationships (a label to its field, a source to its measure), not a uniform margin.",
+    "1": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    },
+    "2": {
+      "$type": "dimension",
+      "$value": {
+        "value": 8,
+        "unit": "px"
+      }
+    },
+    "3": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      }
+    },
+    "4": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      }
+    },
+    "5": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      }
+    },
+    "6": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      }
+    },
+    "7": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "px"
+      }
+    },
+    "8": {
+      "$type": "dimension",
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      }
+    },
+    "9": {
+      "$type": "dimension",
+      "$value": {
+        "value": 96,
+        "unit": "px"
+      }
+    },
+    "section": {
+      "$type": "dimension",
+      "$value": {
+        "value": 72,
+        "unit": "px"
+      },
+      "$description": "Between sections."
+    },
+    "subgroup": {
+      "$type": "dimension",
+      "$value": "{space.6}",
+      "$description": "Between subgroups inside a section."
+    },
+    "group": {
+      "$type": "dimension",
+      "$value": "{space.4}",
+      "$description": "Between items of one group."
+    },
+    "label": {
+      "$type": "dimension",
+      "$value": "{space.2}",
+      "$description": "Label to its control."
+    },
+    "fluid": {
+      "$description": "Fluid pairs a space role clamps between across layout.fluid; label spacing stays fixed.",
+      "section": {
+        "min": {
+          "$type": "dimension",
+          "$value": "{space.7}"
+        },
+        "max": {
+          "$type": "dimension",
+          "$value": "{space.9}"
+        }
+      },
+      "subgroup": {
+        "min": {
+          "$type": "dimension",
+          "$value": "{space.5}"
+        },
+        "max": {
+          "$type": "dimension",
+          "$value": "{space.7}"
+        }
+      },
+      "group": {
+        "min": {
+          "$type": "dimension",
+          "$value": "{space.3}"
+        },
+        "max": {
+          "$type": "dimension",
+          "$value": "{space.5}"
+        }
+      }
+    }
+  },
+  "layout": {
+    "field-max": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1328,
+        "unit": "px"
+      },
+      "$description": "Maximum content field. The field is fluid below it."
+    },
+    "margin-min": {
+      "$type": "dimension",
+      "$value": {
+        "value": 16,
+        "unit": "px"
+      },
+      "$description": "Outer page margin at the narrowest widths."
+    },
+    "margin-max": {
+      "$type": "dimension",
+      "$value": {
+        "value": 64,
+        "unit": "px"
+      },
+      "$description": "Outer page margin ceiling; between min and max the margin scales with the viewport (about 4vw)."
+    },
+    "columns": {
+      "$type": "number",
+      "$value": 12,
+      "$description": "Column count of the field. Important moments may violate the field deliberately (amplitude permitting)."
+    },
+    "column-gap": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Gutter between columns."
+    },
+    "measure": {
+      "$type": "number",
+      "$value": 62,
+      "$description": "Reading measure in ch, decoupled from page width (a number: DTCG dimensions allow only px/rem; CSS output appends the unit).",
+      "$extensions": {
+        "design-tokens.unit": "ch"
+      }
+    },
+    "reading-measure": {
+      "$type": "number",
+      "$value": 41.292,
+      "$description": "Article prose and its responsive column, matching 62 zero advances of Instrument Sans while keeping the width stable as the reading font loads.",
+      "$extensions": {
+        "design-tokens.unit": "em"
+      }
+    },
+    "shell-width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 720,
+        "unit": "px"
+      },
+      "$description": "Width of the one shared command/tenant shell (narrower tenants may reduce it)."
+    },
+    "dock": {
+      "$type": "dimension",
+      "$value": {
+        "value": 30,
+        "unit": "rem"
+      },
+      "$description": "Working width of an application dock beside its stage."
+    },
+    "dock-dense": {
+      "$type": "dimension",
+      "$value": "{layout.shell-width}",
+      "$description": "Dense application dock width, shared with the command shell; use the working dock width when it cannot fit beside the stage."
+    },
+    "stage-min": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "rem"
+      },
+      "$description": "Minimum application stage width beside a dock before the dock falls back to its working width."
+    },
+    "preview-width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 330,
+        "unit": "px"
+      },
+      "$description": "Maximum width of a bounded hover/focus reference preview; never reflows prose."
+    },
+    "fluid": {
+      "$description": "Viewport range over which fluid space and type interpolate.",
+      "from": {
+        "$type": "dimension",
+        "$value": {
+          "value": 320,
+          "unit": "px"
+        },
+        "$description": "Viewport width at which fluid values sit at their min."
+      },
+      "to": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1440,
+          "unit": "px"
+        },
+        "$description": "Viewport width at which fluid values reach their max."
+      }
+    },
+    "breakpoint": {
+      "$description": "Viewport thresholds for @media, through the literal layout partial.",
+      "compact": {
+        "$type": "dimension",
+        "$value": {
+          "value": 600,
+          "unit": "px"
+        },
+        "$description": "Below it the page takes its single-column composition, and a placed region resolves as mobile whatever the input; from it, a coarse pointer or no hover resolves mobile and a fine pointer with hover resolves web."
+      },
+      "wide": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1120,
+          "unit": "px"
+        },
+        "$description": "From it the full field with its violations and side rail."
+      },
+      "navigation": {
+        "$type": "dimension",
+        "$value": {
+          "value": 768,
+          "unit": "px"
+        },
+        "$description": "Width at which navigation and narrow component arrangements recompose."
+      },
+      "columns": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1024,
+          "unit": "px"
+        },
+        "$description": "Width at which paired content regions can use multiple columns."
+      },
+      "reading": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1280,
+          "unit": "px"
+        },
+        "$description": "Width required for full reading rails and wide component arrangements."
+      }
+    },
+    "container": {
+      "$description": "Container inline-size thresholds for @container, through the literal layout partial.",
+      "narrow": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        },
+        "$description": "Below it a component takes its stacked arrangement."
+      },
+      "rail": {
+        "$type": "dimension",
+        "$value": {
+          "value": 880,
+          "unit": "px"
+        },
+        "$description": "Side-rail wrap: below it the rail moves beneath the main column."
+      }
+    },
+    "track-min": {
+      "$type": "dimension",
+      "$value": {
+        "value": 240,
+        "unit": "px"
+      },
+      "$description": "Minimum auto-fit grid track, used as min(100%, this)."
+    },
+    "sticky-chrome": {
+      "$type": "dimension",
+      "$value": {
+        "value": 56,
+        "unit": "px"
+      },
+      "$description": "Block size of sticky chrome, reserved as the root's scroll padding."
+    },
+    "intrinsic-block": {
+      "$type": "dimension",
+      "$value": {
+        "value": 800,
+        "unit": "px"
+      },
+      "$description": "contain-intrinsic-size estimate for a content-visibility: auto section."
+    },
+    "test-width": {
+      "$description": "Reference widths every page is verified at. Test widths, not layout breakpoints; the same implementation recomposes between them.",
+      "wide": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1440,
+          "unit": "px"
+        },
+        "$description": "Native desktop canvas."
+      },
+      "desktop": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1280,
+          "unit": "px"
+        }
+      },
+      "laptop": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1024,
+          "unit": "px"
+        }
+      },
+      "tablet": {
+        "$type": "dimension",
+        "$value": {
+          "value": 768,
+          "unit": "px"
+        }
+      },
+      "phone-large": {
+        "$type": "dimension",
+        "$value": {
+          "value": 430,
+          "unit": "px"
+        }
+      },
+      "phone": {
+        "$type": "dimension",
+        "$value": {
+          "value": 390,
+          "unit": "px"
+        }
+      },
+      "phone-small": {
+        "$type": "dimension",
+        "$value": {
+          "value": 320,
+          "unit": "px"
+        },
+        "$description": "Reflow stress case; no horizontal scroll."
+      }
+    },
+    "quote-step": {
+      "$type": "number",
+      "$value": 0.83,
+      "$description": "Distance between testimony cards as a fraction of card width."
+    },
+    "quote-tilt": {
+      "$type": "number",
+      "$value": 7,
+      "$extensions": {
+        "design-tokens.unit": "deg"
+      },
+      "$description": "Neighbouring testimony card angle around the focused account."
+    },
+    "quote-neighbour-scale": {
+      "$type": "number",
+      "$value": 0.86,
+      "$description": "Neighbouring testimony card scale relative to the focused account."
+    },
+    "encounter": {
+      "min-height": {
+        "$type": "dimension",
+        "$value": {
+          "value": 640,
+          "unit": "px"
+        },
+        "$description": "Minimum field height retaining the figure and foreground controls on a wide character entrance."
+      },
+      "copy-measure": {
+        "$type": "number",
+        "$value": 22.644,
+        "$extensions": {
+          "design-tokens.unit": "em"
+        },
+        "$description": "Short introduction measure beside a character in a continuous field, stable while the reading font loads."
+      },
+      "headline-scale": {
+        "$type": "number",
+        "$value": 1.5,
+        "$description": "Scale of the display step at the single peak of a character encounter."
+      },
+      "choice": {
+        "min-height": {
+          "$type": "dimension",
+          "$value": {
+            "value": 236,
+            "unit": "px"
+          },
+          "$description": "Minimum supporting choice height; complete copy may grow the card."
+        },
+        "radius": {
+          "$type": "dimension",
+          "$value": {
+            "value": 26,
+            "unit": "px"
+          },
+          "$description": "Rounded edge of a translucent encounter choice."
+        },
+        "peek-size": {
+          "$type": "dimension",
+          "$value": {
+            "value": 170,
+            "unit": "px"
+          },
+          "$description": "Decorative figure size within a supporting encounter choice."
+        },
+        "peek-overhang": {
+          "$type": "dimension",
+          "$value": {
+            "value": 62,
+            "unit": "px"
+          },
+          "$description": "Figure recession past the trailing card edge."
+        },
+        "peek-bottom": {
+          "$type": "dimension",
+          "$value": {
+            "value": 18,
+            "unit": "px"
+          },
+          "$description": "Figure inset above the bottom of its supporting card."
+        },
+        "copy-reserve": {
+          "$type": "dimension",
+          "$value": {
+            "value": 108,
+            "unit": "px"
+          },
+          "$description": "Trailing territory kept clear of supporting choice copy for the figure."
+        },
+        "width": {
+          "$type": "dimension",
+          "$value": {
+            "value": 340,
+            "unit": "px"
+          },
+          "$description": "Readable width of an image-bearing supporting choice within a horizontal encounter strip."
+        }
+      }
+    },
+    "film": {
+      "headline-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 42,
+          "unit": "px"
+        },
+        "$description": "Smallest paired statement in a cinematic field."
+      },
+      "headline-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 112,
+          "unit": "px"
+        },
+        "$description": "Largest paired statement in a cinematic field."
+      },
+      "headline-fluid": {
+        "$type": "number",
+        "$value": 0.064,
+        "$description": "Viewport width fraction governing a cinematic statement."
+      },
+      "premise-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 330,
+          "unit": "px"
+        },
+        "$description": "Short premise measure opposite the paired cinematic statement."
+      },
+      "card-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 300,
+          "unit": "px"
+        },
+        "$description": "Width of a chamber invitation within the cinematic field."
+      },
+      "card-first-top": {
+        "$type": "number",
+        "$value": 0.17,
+        "$description": "Viewport height fraction placing the first chamber invitation."
+      },
+      "card-second-top": {
+        "$type": "number",
+        "$value": 0.44,
+        "$description": "Viewport height fraction placing the second chamber invitation."
+      },
+      "phone-card-top": {
+        "$type": "number",
+        "$value": 0.13,
+        "$description": "Handheld viewport height fraction starting the chamber invitations."
+      },
+      "phone-card-step": {
+        "$type": "dimension",
+        "$value": {
+          "value": 150,
+          "unit": "px"
+        },
+        "$description": "Vertical separation between the two handheld chamber invitations."
+      },
+      "card-radius": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Soft corner joining a chamber invitation to its optical field."
+      },
+      "card-inset": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Side and lower inset of an optical scene invitation."
+      },
+      "card-inset-start": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Upper inset of an optical scene invitation."
+      },
+      "pointer-ring": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "Diameter of the optical pointer ring."
+      },
+      "pointer-dot": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Diameter of its resting central point."
+      },
+      "action-inset-inline": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        },
+        "$description": "Horizontal space inside the primary scene advance."
+      },
+      "action-inset-block": {
+        "$type": "dimension",
+        "$value": {
+          "value": 12,
+          "unit": "px"
+        },
+        "$description": "Vertical space inside the primary scene advance."
+      },
+      "action-gap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Separation of a primary scene advance from its premise."
+      }
+    },
+    "field": {
+      "pad-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Handheld edge of the optical field composition."
+      },
+      "pad-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 42,
+          "unit": "px"
+        },
+        "$description": "Wide edge of the optical field composition."
+      },
+      "pad-fluid": {
+        "$type": "number",
+        "$value": 0.03,
+        "$description": "Viewport fraction setting field composition edges."
+      },
+      "top-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 104,
+          "unit": "px"
+        },
+        "$description": "Protected opening beneath the field navigation."
+      },
+      "top-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 136,
+          "unit": "px"
+        },
+        "$description": "Largest protected opening beneath field navigation."
+      },
+      "top-fluid": {
+        "$type": "number",
+        "$value": 0.11,
+        "$description": "Viewport height fraction protecting field navigation."
+      },
+      "bottom-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "Minimum field baseline inset."
+      },
+      "bottom-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$description": "Maximum field baseline inset."
+      },
+      "bottom-fluid": {
+        "$type": "number",
+        "$value": 0.04,
+        "$description": "Viewport height fraction placing the field baseline."
+      },
+      "note-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 416,
+          "unit": "px"
+        },
+        "$description": "Annotation column opposite the field statement."
+      },
+      "centre-note-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 544,
+          "unit": "px"
+        },
+        "$description": "Annotation measure under a centred field statement."
+      },
+      "column-gap-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Minimum separation between field statement and annotation."
+      },
+      "column-gap-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 96,
+          "unit": "px"
+        },
+        "$description": "Maximum separation between field statement and annotation."
+      },
+      "column-gap-fluid": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Viewport fraction separating field statement and annotation."
+      },
+      "close-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 672,
+          "unit": "px"
+        },
+        "$description": "Measure protecting the final field question."
+      },
+      "close-height": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        },
+        "$description": "Shared optical space occupied by crossfading closing sentences."
+      },
+      "line-bleed": {
+        "$type": "number",
+        "$value": 0.08,
+        "$description": "Em allowance protecting field headline descenders inside reveal masks."
+      }
+    },
+    "editorial": {
+      "gutter": {
+        "$type": "dimension",
+        "$value": {
+          "value": 48,
+          "unit": "px"
+        },
+        "$description": "Shared editorial opening, header and continuation edge."
+      },
+      "caption-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 280,
+          "unit": "px"
+        },
+        "$description": "Programme caption measure within the opening register."
+      },
+      "detail-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 400,
+          "unit": "px"
+        },
+        "$description": "Compact explanatory column over an ambient film."
+      },
+      "header-clearance": {
+        "$type": "dimension",
+        "$value": {
+          "value": 128,
+          "unit": "px"
+        },
+        "$description": "Minimum clear field beneath navigation before the opening copy."
+      }
+    },
+    "preview": {
+      "aspect": {
+        "$type": "number",
+        "$value": 2.1,
+        "$description": "Minimum wide composition ratio of joined directory choices and their image."
+      },
+      "compact-aspect": {
+        "$type": "number",
+        "$value": 1.5,
+        "$description": "Minimum image panel ratio below stacked directory choices."
+      },
+      "compact-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 640,
+          "unit": "px"
+        },
+        "$description": "Container width below which directory choices precede their image."
+      },
+      "tab-share": {
+        "$type": "number",
+        "$value": 0.25,
+        "$description": "Fraction of a wide directory preview reserved for its choices."
+      },
+      "tab-top": {
+        "$type": "number",
+        "$value": 0.07,
+        "$description": "Top inset of the choices as a fraction of their column width."
+      },
+      "frame": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        },
+        "$description": "Continuous surface around a selected directory image."
+      },
+      "tab-block": {
+        "$type": "dimension",
+        "$value": {
+          "value": 18,
+          "unit": "px"
+        },
+        "$description": "Block padding of a directory preview choice."
+      },
+      "tab-start": {
+        "$type": "dimension",
+        "$value": {
+          "value": 22,
+          "unit": "px"
+        },
+        "$description": "Leading inset of a directory preview choice."
+      },
+      "tab-end": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Trailing inset of a directory preview choice."
+      },
+      "join-softness": {
+        "$type": "dimension",
+        "$value": {
+          "value": 0.5,
+          "unit": "px"
+        },
+        "$description": "Antialias band of the concave directory choice join."
+      }
+    },
+    "directory": {
+      "height": {
+        "$type": "number",
+        "$value": 0.67,
+        "$description": "Resting rail height as a fraction of its width; complete captions can increase it."
+      },
+      "sliver": {
+        "$type": "number",
+        "$value": 0.094,
+        "$description": "Visible share of a resting directory neighbour."
+      },
+      "gap": {
+        "$type": "number",
+        "$value": 0.022,
+        "$description": "Space between directory cards as a share of the rail."
+      },
+      "padding": {
+        "$type": "number",
+        "$value": 0.024,
+        "$description": "Inset of captions and ordinal marks as a share of the rail."
+      },
+      "corner": {
+        "$type": "number",
+        "$value": 0.024,
+        "$description": "Directory clip radius as a share of the rail."
+      },
+      "mark": {
+        "$type": "number",
+        "$value": 0.028,
+        "$description": "Ordinal mark width as a share of the rail."
+      },
+      "caption-gap": {
+        "$type": "number",
+        "$value": 0.95,
+        "$description": "Space between premise and title relative to the caption inset."
+      }
+    },
+    "comparison": {
+      "scroll-below": {
+        "$type": "dimension",
+        "$value": {
+          "value": 375,
+          "unit": "px"
+        },
+        "$description": "Width below which a research comparison keeps the width its notation needs and scrolls locally instead of squeezing its equal columns."
+      }
+    },
+    "process": {
+      "drop": {
+        "$type": "number",
+        "$value": 0.071,
+        "$description": "Step descent as a fraction of measured path width."
+      },
+      "dot-inset": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Wide dot offset from its step as a fraction of path width."
+      },
+      "dot-raise": {
+        "$type": "number",
+        "$value": 0.033,
+        "$description": "Wide dot rise above its step as a fraction of path width."
+      },
+      "curve": {
+        "$type": "number",
+        "$value": 0.24,
+        "$description": "Early crest height relative to each horizontal hop."
+      },
+      "handle-start": {
+        "$type": "number",
+        "$value": 0.25,
+        "$description": "First horizontal curve handle fraction."
+      },
+      "handle-end": {
+        "$type": "number",
+        "$value": 0.76,
+        "$description": "Second horizontal curve handle fraction."
+      },
+      "crest-end": {
+        "$type": "number",
+        "$value": 0.88,
+        "$description": "Second handle rise relative to the first."
+      },
+      "stack-swing": {
+        "$type": "number",
+        "$value": 2,
+        "$description": "Stacked S-bend reach in dot diameters."
+      },
+      "stack-handle": {
+        "$type": "number",
+        "$value": 0.35,
+        "$description": "Stacked curve handle fraction of each vertical interval."
+      },
+      "stack-below": {
+        "$type": "dimension",
+        "$value": {
+          "value": 640,
+          "unit": "px"
+        },
+        "$description": "Width below which process stages form a vertical reading path."
+      },
+      "dot-size": {
+        "$type": "dimension",
+        "$value": {
+          "value": 11,
+          "unit": "px"
+        },
+        "$description": "Process anchor dot diameter, independent of field width."
+      },
+      "dash": {
+        "$type": "dimension",
+        "$value": {
+          "value": 7,
+          "unit": "px"
+        },
+        "$description": "Process line dash length, independent of field width."
+      },
+      "gap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 7,
+          "unit": "px"
+        },
+        "$description": "Process line gap, independent of field width."
+      },
+      "thickness": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        },
+        "$description": "Process line thickness."
+      },
+      "pad-top": {
+        "$type": "number",
+        "$value": 0.075,
+        "$description": "Wide process top breathing room relative to field width."
+      },
+      "pad-side": {
+        "$type": "number",
+        "$value": 0.043,
+        "$description": "Wide process inline inset relative to field width."
+      },
+      "pad-bottom": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Wide process closing room relative to field width."
+      },
+      "column-gap": {
+        "$type": "number",
+        "$value": 0.021,
+        "$description": "Wide process column gap relative to field width."
+      },
+      "stage-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 240,
+          "unit": "px"
+        },
+        "$description": "Minimum static process stage measure before wrapping."
+      },
+      "stack-pad-block": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "Stacked process outer vertical inset."
+      },
+      "stack-pad-inline": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Stacked process outer inline inset."
+      },
+      "stack-gap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 36,
+          "unit": "px"
+        },
+        "$description": "Stacked process step separation."
+      },
+      "stack-indent": {
+        "$type": "dimension",
+        "$value": {
+          "value": 32,
+          "unit": "px"
+        },
+        "$description": "Stacked copy offset from its line."
+      },
+      "accordion": {
+        "list-share": {
+          "$type": "number",
+          "$value": 0.47,
+          "$description": "Process step list width as a share of the paired list and media field."
+        },
+        "media-ratio": {
+          "$type": "number",
+          "$value": 0.54,
+          "$description": "Process illustration height relative to its width."
+        },
+        "stack-below": {
+          "$type": "dimension",
+          "$value": {
+            "value": 720,
+            "unit": "px"
+          },
+          "$description": "Width below which a process illustration follows its selected step."
+        }
+      }
+    },
+    "focus-reveal": {
+      "pad-inline": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Focus frame inline inset in heading ems.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "pad-block": {
+        "$type": "number",
+        "$value": 0.15,
+        "$description": "Focus frame block inset in heading ems.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "gap": {
+        "$type": "number",
+        "$value": 0.4,
+        "$description": "Separation between focused heading words in heading ems.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "arm": {
+        "$type": "number",
+        "$value": 0.3,
+        "$description": "Focus corner length in heading ems.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "stroke-scale": {
+        "$type": "number",
+        "$value": 0.036,
+        "$description": "Focus corner stroke relative to heading size.",
+        "$extensions": {
+          "design-tokens.unit": "em"
+        }
+      },
+      "stroke-min": {
+        "$type": "dimension",
+        "$value": {
+          "value": 2,
+          "unit": "px"
+        },
+        "$description": "Minimum focus corner thickness."
+      }
+    },
+    "quote-card-share": {
+      "$type": "number",
+      "$value": 0.36,
+      "$description": "Card width as a share of the deck on a wide surface."
+    },
+    "quote-card-ratio": {
+      "$type": "number",
+      "$value": 0.85,
+      "$description": "Minimum card height relative to its width; complete accounts may grow taller."
+    },
+    "quote-drop": {
+      "$type": "number",
+      "$value": 0.039,
+      "$description": "Card descent per step, measured in card widths."
+    },
+    "quote-falloff": {
+      "$type": "number",
+      "$value": 0.94,
+      "$description": "Additional scale retained by each step beyond the nearest neighbour."
+    },
+    "quote-visible-distance": {
+      "$type": "number",
+      "$value": 3.2,
+      "$description": "Farthest visible position in the fanned deck."
+    },
+    "quote-card-padding": {
+      "$type": "number",
+      "$value": 0.065,
+      "$description": "Card padding relative to its width."
+    },
+    "quote-card-gap": {
+      "$type": "number",
+      "$value": 0.048,
+      "$description": "Card content separation relative to its width."
+    },
+    "quote-card-radius": {
+      "$type": "number",
+      "$value": 0.048,
+      "$description": "Card corner radius relative to its width."
+    },
+    "quote-copy-scale": {
+      "$type": "number",
+      "$value": 0.063,
+      "$description": "Quotation type size relative to card width, above the reading floor."
+    },
+    "quote-release-threshold": {
+      "$type": "number",
+      "$value": 0.18,
+      "$description": "Fraction of a card step needed to commit a drag."
+    },
+    "quote-drag-threshold": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      },
+      "$description": "Minimum horizontal movement before a deck drag begins."
+    },
+    "quote-compact-width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 48,
+        "unit": "rem"
+      },
+      "$description": "Deck width below which the focused account receives a readable handheld measure."
+    },
+    "quote-control-icon": {
+      "$type": "dimension",
+      "$value": {
+        "value": 20,
+        "unit": "px"
+      },
+      "$description": "Direction mark within a deck navigation control."
+    },
+    "quote-choice-mark": {
+      "$type": "dimension",
+      "$value": {
+        "value": 6,
+        "unit": "px"
+      },
+      "$description": "Resting choice mark inside its full interaction target."
+    },
+    "quote-choice-active": {
+      "$type": "dimension",
+      "$value": {
+        "value": 18,
+        "unit": "px"
+      },
+      "$description": "Expanded mark identifying the selected account."
+    },
+    "project": {
+      "media-aspect": {
+        "$type": "number",
+        "$value": 1.5,
+        "$description": "Reserved product overview illustration; authored media keeps its intrinsic ratio."
+      },
+      "walkthrough-aspect": {
+        "$type": "number",
+        "$value": 1.7777777777777777,
+        "$description": "Screen-shaped field for an authored product walkthrough reservation."
+      },
+      "walkthrough-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 960,
+          "unit": "px"
+        },
+        "$description": "Bounded screen-recording field, centred beneath the product demonstration."
+      }
+    },
+    "folder": {
+      "aspect": {
+        "$type": "number",
+        "$value": 0.75,
+        "$description": "Minimum width-to-height proportion of a collection folder; complete text may extend it."
+      },
+      "tab": {
+        "$type": "number",
+        "$value": 0.62,
+        "$description": "Fraction of the folder width occupied by the raised tab."
+      },
+      "notch": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Depth of the folder step as a fraction of its width."
+      },
+      "closed": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Resting reveal of collection artwork as a fraction of folder height."
+      },
+      "open": {
+        "$type": "number",
+        "$value": 0.54,
+        "$description": "Maximum artwork reveal on an opened collection folder, constrained by its complete copy."
+      },
+      "peek": {
+        "$type": "number",
+        "$value": 0.28,
+        "$description": "Minimum artwork height in width units before complete folder copy."
+      },
+      "max-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        },
+        "$description": "Maximum measure of a single collection folder."
+      },
+      "viewport-share": {
+        "$type": "number",
+        "$value": 0.56,
+        "$description": "Preferred maximum folder height as a share of the viewport; complete copy may grow beyond it."
+      }
+    },
+    "arc": {
+      "spacing": {
+        "$type": "number",
+        "$value": 26,
+        "$description": "Angular separation between adjacent catalogue cards.",
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        }
+      },
+      "radius": {
+        "$type": "number",
+        "$value": 0.62,
+        "$description": "Arc radius as a share of the catalogue field width."
+      },
+      "lift": {
+        "$type": "number",
+        "$value": 0.02,
+        "$description": "Focused catalogue card lift as a share of the field width."
+      },
+      "active-scale": {
+        "$type": "number",
+        "$value": 1.34,
+        "$description": "Scale of the focused catalogue card."
+      },
+      "neighbour-scale": {
+        "$type": "number",
+        "$value": 0.76,
+        "$description": "Scale of neighbouring catalogue cards around the focused card."
+      },
+      "neighbour-opacity": {
+        "$type": "number",
+        "$value": 0.92,
+        "$description": "Opacity of visible neighbouring catalogue cards."
+      },
+      "reach": {
+        "$type": "number",
+        "$value": 4,
+        "$description": "Maximum adjacent catalogue positions shown on either side of the focused card."
+      },
+      "card-share": {
+        "$type": "number",
+        "$value": 0.26,
+        "$description": "Preferred catalogue card width as a share of a wide field."
+      },
+      "compact-card-share": {
+        "$type": "number",
+        "$value": 0.58,
+        "$description": "Preferred catalogue card width as a share of a compact field."
+      },
+      "viewport-share": {
+        "$type": "number",
+        "$value": 0.65,
+        "$description": "Maximum viewport height share reserved for the focused catalogue card."
+      },
+      "folder-closed": {
+        "$type": "number",
+        "$value": 0.55,
+        "$description": "Resting artwork reveal for title-only catalogue folders as a share of their height."
+      },
+      "folder-open": {
+        "$type": "number",
+        "$value": 0.72,
+        "$description": "Maximum artwork reveal for title-only catalogue folders, constrained by the complete title."
+      },
+      "edge-fade": {
+        "$type": "dimension",
+        "$value": {
+          "value": 64,
+          "unit": "px"
+        },
+        "$description": "Distance over which the catalogue arc yields softly at its lower edge."
+      },
+      "edge-angle": {
+        "$type": "number",
+        "$value": 60,
+        "$extensions": {
+          "design-tokens.unit": "deg"
+        },
+        "$description": "Maximum angular extent of the visible catalogue fan from its centred card."
+      }
+    },
+    "quote-company-scale": {
+      "$type": "number",
+      "$value": 0.026,
+      "$description": "Company label size relative to the testimony card width, above the metadata floor."
+    },
+    "quote-rating-scale": {
+      "$type": "number",
+      "$value": 0.03,
+      "$description": "Rating mark size relative to the testimony card width."
+    },
+    "quote-avatar-scale": {
+      "$type": "number",
+      "$value": 0.09,
+      "$description": "Portrait diameter relative to the testimony card width."
+    },
+    "quote-person-scale": {
+      "$type": "number",
+      "$value": 0.028,
+      "$description": "Attribution size relative to the testimony card width, above the metadata floor."
+    },
+    "quote-person-gap": {
+      "$type": "number",
+      "$value": 0.026,
+      "$description": "Gap between the portrait and attribution relative to the testimony card width."
+    },
+    "quote-person-inset": {
+      "$type": "number",
+      "$value": 0.037,
+      "$description": "Space above the attribution relative to the testimony card width."
+    },
+    "search": {
+      "depth": {
+        "card-width": {
+          "$type": "dimension",
+          "$value": {
+            "value": 480,
+            "unit": "px"
+          },
+          "$description": "Maximum measure of the selected search result in the depth strip."
+        },
+        "compact-card-share": {
+          "$type": "number",
+          "$value": 0.84,
+          "$description": "Selected search result width as a share of a compact viewport."
+        },
+        "frame-min": {
+          "$type": "dimension",
+          "$value": {
+            "value": 352,
+            "unit": "px"
+          },
+          "$description": "Minimum depth-strip height before complete selected result copy expands it."
+        },
+        "perspective": {
+          "$type": "dimension",
+          "$value": {
+            "value": 1000,
+            "unit": "px"
+          },
+          "$description": "Perspective distance of the shared search result depth strip."
+        },
+        "step": {
+          "$type": "number",
+          "$value": 0.72,
+          "$description": "Horizontal step between depth-strip seats in selected card widths."
+        },
+        "retreat": {
+          "$type": "number",
+          "$value": 0.28,
+          "$description": "Depth retreat of a result per seat from the selected card, in card widths."
+        },
+        "yaw": {
+          "$type": "number",
+          "$value": 35,
+          "$description": "Angle of each successive search result away from the viewer.",
+          "$extensions": {
+            "design-tokens.unit": "deg"
+          }
+        },
+        "yaw-max": {
+          "$type": "number",
+          "$value": 75,
+          "$description": "Maximum turn of a peripheral search result.",
+          "$extensions": {
+            "design-tokens.unit": "deg"
+          }
+        },
+        "scale-falloff": {
+          "$type": "number",
+          "$value": 0.08,
+          "$description": "Scale reduction per seat from the selected search result."
+        }
+      },
+      "frame-max": {
+        "$type": "dimension",
+        "$value": {
+          "value": 672,
+          "unit": "px"
+        },
+        "$description": "Maximum height of the search discovery field before its result strip."
+      },
+      "viewport-share": {
+        "$type": "number",
+        "$value": 0.3,
+        "$description": "Search query and refinement region height as a share of the visible viewport, reserving space for the result strip."
+      },
+      "center-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 480,
+          "unit": "px"
+        },
+        "$description": "Maximum width of the central search form inside the discovery field."
+      },
+      "pond-cell": {
+        "$type": "dimension",
+        "$value": {
+          "value": 13,
+          "unit": "px"
+        },
+        "$description": "Character cell pitch of the search discovery pond."
+      }
+    },
+    "bookmark": {
+      "tab": {
+        "$type": "number",
+        "$value": 0.26,
+        "$description": "Left-hand cutout as a share of card width, leaving the raised area on the right."
+      },
+      "tail": {
+        "$type": "number",
+        "$value": 0.685,
+        "$description": "Inline position of the benefit card lower bite, as a share of card width."
+      },
+      "top-notch": {
+        "$type": "number",
+        "$value": 0.12,
+        "$description": "Benefit card tab rise as a share of card width."
+      },
+      "bottom-notch": {
+        "$type": "number",
+        "$value": 0.09333333333333334,
+        "$description": "Benefit card lower bite depth as a share of card width."
+      },
+      "radius": {
+        "$type": "number",
+        "$value": 0.088,
+        "$description": "Benefit card rounded mask corners as a share of card width."
+      }
+    },
+    "portrait": {
+      "cell": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        },
+        "$description": "Character cell pitch of the computational portrait."
+      },
+      "reveal-radius": {
+        "$type": "dimension",
+        "$value": {
+          "value": 225,
+          "unit": "px"
+        },
+        "$description": "Radius of the pointer aperture revealing registered portrait layers."
+      }
+    },
+    "scroll-scene": {
+      "preload": {
+        "$type": "number",
+        "$value": 1.2,
+        "$description": "Viewport-height margin for bounded preparation before an authored scroll scene enters."
+      },
+      "gutter": {
+        "$type": "number",
+        "$value": 0.06,
+        "$description": "Inline viewport fraction framing the authored scroll composition."
+      },
+      "interval-height": {
+        "$type": "number",
+        "$value": 0.9,
+        "$description": "Viewport-height share of a quiet interval."
+      },
+      "interval-padding": {
+        "$type": "number",
+        "$value": 0.22,
+        "$description": "Vertical viewport share around the paired interval lines."
+      },
+      "gallery-before": {
+        "$type": "number",
+        "$value": 0.18,
+        "$description": "Viewport-height space before the alternating art studies."
+      },
+      "gallery-after": {
+        "$type": "number",
+        "$value": 0.24,
+        "$description": "Viewport-height space following the alternating art studies."
+      },
+      "gallery-heading-gap": {
+        "$type": "number",
+        "$value": 0.1,
+        "$description": "Viewport-height separation below the gallery heading."
+      },
+      "gallery-row-gap": {
+        "$type": "number",
+        "$value": 0.14,
+        "$description": "Viewport-height separation between the two art studies."
+      },
+      "gallery-first-offset": {
+        "$type": "number",
+        "$value": 0.22,
+        "$description": "Lower caption placement beside the first art study."
+      },
+      "gallery-second-offset": {
+        "$type": "number",
+        "$value": 0.08,
+        "$description": "Upper caption placement beside the second art study."
+      },
+      "gallery-caption-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 380,
+          "unit": "px"
+        },
+        "$description": "Maximum art-study caption width."
+      },
+      "encounter-width": {
+        "$type": "dimension",
+        "$value": {
+          "value": 360,
+          "unit": "px"
+        },
+        "$description": "Maximum width of the lower side caption."
+      },
+      "encounter-bottom": {
+        "$type": "number",
+        "$value": 0.08,
+        "$description": "Viewport-height clearance beneath the side caption."
+      },
+      "closing-padding": {
+        "$type": "number",
+        "$value": 0.18,
+        "$description": "Vertical viewport space around the closing invitation."
+      },
+      "cue-bottom": {
+        "$type": "number",
+        "$value": 0.04,
+        "$description": "Viewport clearance below the scroll cue."
+      },
+      "gallery-gap": {
+        "$type": "dimension",
+        "$value": {
+          "value": 40,
+          "unit": "px"
+        },
+        "$description": "Gap between each image and its caption."
+      },
+      "margin-inset": {
+        "$type": "number",
+        "$value": 0.024,
+        "$description": "Viewport-width inset of the quiet left margin."
+      },
+      "aside-inset": {
+        "$type": "number",
+        "$value": 0.026,
+        "$description": "Viewport-width inset of the right marginal line."
+      },
+      "aside-top": {
+        "$type": "number",
+        "$value": 0.3,
+        "$description": "Vertical placement of the right marginal line."
+      },
+      "seal-top": {
+        "$type": "number",
+        "$value": 0.56,
+        "$description": "Vertical placement of the late scene signature."
+      }
+    }
+  },
+  "target": {
+    "min": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Absolute minimum pointer target (2.5.8)."
+    },
+    "project": {
+      "$type": "dimension",
+      "$value": {
+        "value": 44,
+        "unit": "px"
+      },
+      "$description": "Project standard for every actionable control, in its smaller dimension."
+    },
+    "compact": {
+      "$type": "dimension",
+      "$value": {
+        "value": 32,
+        "unit": "px"
+      },
+      "$description": "Compact application rows and controls with a fine pointer. Coarse pointers and publication controls keep target.project."
+    }
+  },
+  "focus": {
+    "width": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Focus ring stroke; the ring sits outside the shape."
+    },
+    "offset": {
+      "$type": "dimension",
+      "$value": {
+        "value": 4,
+        "unit": "px"
+      }
+    }
+  },
+  "stroke": {
+    "hair": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      },
+      "$description": "Hairline rules and boundaries."
+    },
+    "underline": {
+      "$type": "dimension",
+      "$value": {
+        "value": 1,
+        "unit": "px"
+      },
+      "$description": "Link underline at rest."
+    },
+    "underline-active": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Link and crossing underline on hover/focus."
+    },
+    "lit-edge": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "The one lit edge of a plate."
+    },
+    "preview-edge": {
+      "$type": "dimension",
+      "$value": {
+        "value": 3,
+        "unit": "px"
+      },
+      "$description": "Target-signature edge on a reference preview."
+    }
+  },
+  "radius": {
+    "$description": "Corners by component role; functional controls share the optical contour.",
+    "control": {
+      "$type": "dimension",
+      "$value": "{layout.film.card-radius}",
+      "$description": "Buttons, fields and ordinary controls."
+    },
+    "surface": {
+      "$type": "dimension",
+      "$value": {
+        "value": 2,
+        "unit": "px"
+      },
+      "$description": "Optical plates and shells."
+    },
+    "preview-join": {
+      "$type": "dimension",
+      "$value": {
+        "value": 12,
+        "unit": "px"
+      },
+      "$description": "Concave join between a directory choice and its illustrated preview."
+    },
+    "preview-frame": {
+      "$type": "dimension",
+      "$value": {
+        "value": 24,
+        "unit": "px"
+      },
+      "$description": "Outer corner of a joined illustrated directory preview."
+    }
+  },
+  "elevation": {
+    "shell": {
+      "$description": "Shell and preview lift over an untouched page: a far cast and a contact cast.",
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 80,
+          "unit": "px"
+        }
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.2,
+        "$description": "Opacity of color.shadow in the far cast."
+      },
+      "contact": {
+        "$description": "The contact cast under the shell's edge.",
+        "offset-y": {
+          "$type": "dimension",
+          "$value": {
+            "value": 2,
+            "unit": "px"
+          }
+        },
+        "blur": {
+          "$type": "dimension",
+          "$value": {
+            "value": 12,
+            "unit": "px"
+          }
+        },
+        "opacity": {
+          "$type": "number",
+          "$value": 0.08,
+          "$description": "Opacity of color.shadow in the contact cast."
+        }
+      }
+    },
+    "$description": "Lift of a surface over its ground: every step is cast in color.shadow at its opacity times color.lift.shadow.",
+    "plate": {
+      "$description": "A plate or module lifted one step off its ground.",
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 1,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 3,
+          "unit": "px"
+        }
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.12,
+        "$description": "Opacity of color.shadow in the cast."
+      }
+    },
+    "popover": {
+      "$description": "A menu or popover anchored to its trigger.",
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 8,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 24,
+          "unit": "px"
+        }
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.16,
+        "$description": "Opacity of color.shadow in the cast."
+      }
+    },
+    "film": {
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 20,
+          "unit": "px"
+        },
+        "$description": "Cast beneath a translucent scene invitation."
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 50,
+          "unit": "px"
+        },
+        "$description": "Diffuse underside cast of an optical scene invitation."
+      },
+      "spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": -20,
+          "unit": "px"
+        },
+        "$description": "Recession of the optical invitation cast."
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "Shadow strength beneath an optical invitation."
+      },
+      "highlight": {
+        "$type": "number",
+        "$value": 0.18,
+        "$description": "Light caught at the upper inside edge of an optical invitation."
+      }
+    },
+    "bookmark": {
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 14,
+          "unit": "px"
+        },
+        "$description": "Resting bookmark cast offset."
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 28,
+          "unit": "px"
+        },
+        "$description": "Resting bookmark cast diffusion."
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.26,
+        "$description": "World-shadow strength in the resting bookmark cast."
+      },
+      "held-offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 26,
+          "unit": "px"
+        },
+        "$description": "Held bookmark cast offset."
+      },
+      "held-blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 44,
+          "unit": "px"
+        },
+        "$description": "Held bookmark cast diffusion."
+      },
+      "held-opacity": {
+        "$type": "number",
+        "$value": 0.34,
+        "$description": "World-shadow strength in the held bookmark cast."
+      }
+    },
+    "quote": {
+      "$description": "Soft cast separating overlapping attributed sheets.",
+      "offset-y": {
+        "$type": "dimension",
+        "$value": {
+          "value": 16,
+          "unit": "px"
+        }
+      },
+      "blur": {
+        "$type": "dimension",
+        "$value": {
+          "value": 30,
+          "unit": "px"
+        }
+      },
+      "spread": {
+        "$type": "dimension",
+        "$value": {
+          "value": -20,
+          "unit": "px"
+        }
+      },
+      "opacity": {
+        "$type": "number",
+        "$value": 0.3,
+        "$description": "World shadow strength beneath a fan card."
+      }
+    }
+  },
+  "island": {
+    "$description": "Cost bounds of script-driven islands.",
+    "pixel-ratio-max": {
+      "$type": "number",
+      "$value": 2,
+      "$description": "Cap on the device-pixel ratio an island's drawing buffer is sized by."
+    },
+    "start-margin": {
+      "$type": "dimension",
+      "$value": {
+        "value": 400,
+        "unit": "px"
+      },
+      "$description": "IntersectionObserver root margin at which an island starts work."
+    }
+  }
+}

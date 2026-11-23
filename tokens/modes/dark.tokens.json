@@ -1,0 +1,124 @@
+{
+  "$description": "Mode 'dark': binds semantic colour roles to the active world's dark palette and every world's dark crossing signature, and sets the dark colour-state derivations.",
+  "color": {
+    "paper": {
+      "$type": "color",
+      "$value": "{world.dark.paper}"
+    },
+    "sheet": {
+      "$type": "color",
+      "$value": "{world.dark.sheet}"
+    },
+    "ink": {
+      "$type": "color",
+      "$value": "{world.dark.ink}"
+    },
+    "muted": {
+      "$type": "color",
+      "$value": "{world.dark.muted}"
+    },
+    "line": {
+      "$type": "color",
+      "$value": "{world.dark.line}"
+    },
+    "strong-line": {
+      "$type": "color",
+      "$value": "{world.dark.strong-line}"
+    },
+    "accent": {
+      "$type": "color",
+      "$value": "{world.dark.accent}"
+    },
+    "signal": {
+      "$type": "color",
+      "$value": "{world.dark.signal}"
+    },
+    "critical": {
+      "$type": "color",
+      "$value": "{world.dark.critical}"
+    },
+    "tint": {
+      "$type": "color",
+      "$value": "{world.dark.tint}"
+    },
+    "metal": {
+      "$type": "color",
+      "$value": "{world.dark.metal}"
+    },
+    "on-metal": {
+      "$type": "color",
+      "$value": "{world.dark.on-metal}"
+    },
+    "focus": {
+      "$type": "color",
+      "$value": "{world.dark.focus}"
+    },
+    "key": {
+      "$type": "color",
+      "$value": "{world.dark.key}",
+      "$description": "Key light colour: the active world's key in this mode."
+    },
+    "shadow": {
+      "$type": "color",
+      "$value": "{world.dark.metal}",
+      "$description": "Cast-shadow colour: the mode's deepest role, so a shadow takes its ground's tint."
+    },
+    "lift": {
+      "$description": "Strengths of a lifted surface's depth in this mode, applied to every elevation step.",
+      "shadow": {
+        "$type": "number",
+        "$value": 0.5,
+        "$description": "Multiplier of each elevation step's opacity of color.shadow. Half cast: in dark the shadow is weaker and bound to the ground's tone."
+      },
+      "edge": {
+        "$type": "number",
+        "$value": 0.14,
+        "$description": "Opacity of color.key along a lifted surface's key-facing edge. The key catches the lifted surface's key-facing edge, so depth reads by tone and light."
+      }
+    },
+    "state": {
+      "$description": "Fraction of color.ink a base role mixes in OKLab for each state.",
+      "hover": {
+        "$type": "number",
+        "$value": 0.08,
+        "$description": "Hover step."
+      },
+      "pressed": {
+        "$type": "number",
+        "$value": 0.15,
+        "$description": "Pressed step, beyond hover."
+      },
+      "selected": {
+        "$type": "number",
+        "$value": 0.11,
+        "$description": "Selected ground step, between hover and pressed."
+      }
+    },
+    "crossing": {
+      "carrier": {
+        "$type": "color",
+        "$value": "{crossing.carrier.dark}"
+      },
+      "chassis": {
+        "$type": "color",
+        "$value": "{crossing.chassis.dark}"
+      },
+      "chronicle": {
+        "$type": "color",
+        "$value": "{crossing.chronicle.dark}"
+      },
+      "folio": {
+        "$type": "color",
+        "$value": "{crossing.folio.dark}"
+      },
+      "lattice": {
+        "$type": "color",
+        "$value": "{crossing.lattice.dark}"
+      },
+      "nocturne": {
+        "$type": "color",
+        "$value": "{crossing.nocturne.dark}"
+      }
+    }
+  }
+}
